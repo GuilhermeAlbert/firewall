@@ -14,34 +14,30 @@
 		          	<thead>
 		            	<tr>
 		              		<th>#</th>
-		              		<th>Nome</th>
-		              		<th>E-mail</th>
-		              		<th>Permissão</th>
+		              		<th>Descrição</th>
 		              		<th>Nível de acesso</th>
 		              		<th>Status</th>
 		            	</tr>
 		          	</thead>
 	          		<tbody>
-	          			@foreach ($usuarios as $key => $usuario): 
+	          			@foreach ($permissoes as $key => $permissao): 
 				            <tr>
-				              	<td>{{ $usuario->id }}</td>
-				              	<td>{{ $usuario->name }}</td>
-				              	<td>{{ $usuario->email }}</td>
-				              	<td>{{ $usuario->id_permissao }}</td>
+				              	<td>{{ $permissao->id }}</td>
+				              	<td>{{ $permissao->descricao }}</td>
 				              	<td>
-				              		@if ($usuario->nivel == 'U') 
+				              		@if ($permissao->nivel == 'U') 
 				              			Usuário
 				              		@else
 				              			Sistema
 				              		@endif
 				              	</td>
 				              	<td>
-				              		@if ($usuario->status == 'A') 
+				              		@if ($permissao->status == 'A') 
 				              			Ativo
 				              		@else
 				              			Inativo
 				              		@endif
-				              	</td>				              	
+				              	</td>
 				            </tr>
 			            @endforeach
 			        </tbody>
