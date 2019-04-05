@@ -12,6 +12,12 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+        Sistema
+    </div>
+
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('dashboard.listar') }}">
@@ -19,6 +25,21 @@
             <span>Dashboard</span>
         </a>
     </li>
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('usuarios.listar') }}">
+            <i class="fas fa-user fa-tachometer-alt"></i>
+            <span>Usuários</span>
+        </a>
+    </li>    
+
+    <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Relatórios</span>
+        </a>
+    </li>     
 
     <!-- Divider -->
     <hr class="sidebar-divider">
