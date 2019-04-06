@@ -3,9 +3,7 @@
 Route::prefix('dashboard')->group(function () {
     Route::name('dashboard.')
         ->group(function () {
-            Route::get('/listar', 'DashboardController@listar', function () {
-                return view('layouts.app.dashboard.listar');
-            })->name('listar');
+            Route::get('/listar', 'DashboardController@listar')->name('listar');
         });
 });
 
@@ -23,8 +21,24 @@ Route::prefix('usuarios')->group(function () {
                 ]);
             })->name('cadastrar'); 
 
+            Route::get('/editar/{id}', function (Request $request, $id) {
+                
+                $usuario = \App\User::find($id);
+                $permissoes = \App\Permissao::all()->where("nivel", "!=", "S");
 
-            Route::post('/cadastrar', 'UsuarioController@cadastrar')->name('cadastrar');                       
+                return view('layouts.app.usuarios.editar',
+                    [
+                        'id' => $id,
+                        'permissoes' => $permissoes,
+                        'usuario' => $usuario,
+                    ]
+                );
+            })->name('editar');
+
+            Route::post('/cadastrar', 'UsuarioController@cadastrar')->name('cadastrar');    
+            Route::post('/editar_usuario','UsuarioController@editar')->name('editar_usuario');
+            Route::post('/excluir','UsuarioController@excluir')->name('excluir');    
+                                      
         });
 });
 

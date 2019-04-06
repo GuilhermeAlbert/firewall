@@ -33,4 +33,30 @@ class UsuarioController extends Controller
 
 		return redirect()->route('usuarios.listar');
     }    
+
+    public function editar(Request $request)
+    {
+        $usuario = User::find($request->input('id'));
+        $usuario->name = $request['name'];
+        $usuario->email = $request['email'];
+        $usuario->password = Hash::make($request['password']);
+        $usuario->id_permissao = $request['id_permissao'];        
+        $usuario->save();
+
+        return redirect()->route('usuarios.listar');
+    }   
+
+    public function excluir(Request $request)
+    {
+        $usuario = User::find($request->input('id'));
+
+        try {
+            $usuario->status = "E";
+            $usuario->save();
+
+            return redirect()->route('usuarios.listar');
+        } catch (Exception $e) {
+            return redirect()->route('usuarios.listar');
+        }
+    }     
 }
