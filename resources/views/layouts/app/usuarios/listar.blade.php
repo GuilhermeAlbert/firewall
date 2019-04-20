@@ -24,7 +24,7 @@
 			              		<th>Nome</th>
 			              		<th>E-mail</th>
 			              		<th>Permissão</th>
-			              		<th>Nível de acesso</th>
+			              		{{-- <th>Nível de acesso</th> --}}
 			              		<th>Status</th>
 			              		@if (Auth::user()->id_permissao != 2)
 			              			<th>Ações</th>
@@ -38,6 +38,7 @@
 					              	<td>{{ $usuario->name }}</td>
 					              	<td>{{ $usuario->email }}</td>
 					              	<td>{{ $usuario->permissao_descricao }}</td>
+					              	{{--
 					              	<td>
 					              		@if ($usuario->nivel == 'U') 
 					              			Usuário
@@ -45,6 +46,7 @@
 					              			Sistema
 					              		@endif
 					              	</td>
+					              	--}}
 					              	<td>
 					              		@if ($usuario->status == 'A') 
 					              			Ativo
@@ -52,26 +54,28 @@
 					              			Inativo
 					              		@endif
 					              	</td>
-									@if (Auth::user()->id_permissao == 3 && $usuario->nivel == "U")
+									@if (Auth::user()->id_permissao == 3)
 						                <td>
 						                    <a href="{{ route('usuarios.editar', ['id' => $usuario->id]) }}">
 						                    	<button class="btn btn-success">
-							                    	Editar
+							                    	<i class="fas fa-pen"></i>
 						                		</button>
 						                	</a>
 						                </td>
-						            @elseif (Auth::user()->id_permissao == 4 && $usuario->nivel == "U")
+						            @elseif (Auth::user()->id_permissao == 1 || Auth::user()->id_permissao == 4)
 						                <td>
-						                    <a href="{{ route('usuarios.editar', ['id' => $usuario->id]) }}">
-						                    	<button class="btn btn-success">
-							                    	Editar
-						                		</button>
-						                	</a>
-						                    <button class="btn btn-danger" type="submit" title="Excluir" data-toggle="modal" data-target="#excluirModal">
-						                    	<i class="fa fa-trash-o m-r-10" aria-hidden="true"></i>
-						                    	Excluir
-						                    </button>
+						                	@if($usuario->id != 1)
+							                    <a href="{{ route('usuarios.editar', ['id' => $usuario->id]) }}">
+							                    	<button class="btn btn-success">
+								                    	<i class="fas fa-pen"></i>
+							                		</button>
+							                	</a>
+							                    <button class="btn btn-danger" type="submit" title="Excluir" data-toggle="modal" data-target="#excluirModal">
+							                    	<i class="fas fa-trash-alt"></i>
+							                    </button>
+						                    @endif
 						                </td>					                					            
+
 									@endif
 					            </tr>
 				            @endforeach
@@ -98,7 +102,7 @@
 	                </div>
 	                <div class="modal-footer">
 	                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-	                    <form action="{{ route('usuarios.excluir', ['id' => $usuario->id]) }}" method="POST">
+	                    <form action="{{ route('usuarios.excluir_usuario', ['id' => $usuario->id]) }}" method="POST">
 	                        @csrf
 	                        <button class="btn btn-primary" title="Excluir" type="submit">Excluir</button>
 	                    </form>

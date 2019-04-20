@@ -22,7 +22,31 @@ class UsuarioController extends Controller
         ]);
     }
 
-    public function cadastrar(Request $request)
+    public function cadastrar(Request $request){
+
+        // Busca permissões de acordo com o nível de acesso diferente de S (Sistema)
+        $permissoes = \App\Permissao::all()->where("nivel", "!=", "S");
+
+        return view('layouts.app.usuarios.cadastrar', [
+            'permissoes' => $permissoes,
+        ]);        
+    }    
+
+    public function editar(Request $request, $id){
+        
+        $usuario = \App\User::find($id);
+        $permissoes = \App\Permissao::all()->where("nivel", "!=", "S");
+
+        return view('layouts.app.usuarios.editar',
+            [
+                'id' => $id,
+                'permissoes' => $permissoes,
+                'usuario' => $usuario,
+            ]
+        );       
+    } 
+
+    public function cadastrar_usuario(Request $request)
     {
         $usuarios = new User();
         $usuarios->name = $request->input('name');
@@ -34,7 +58,7 @@ class UsuarioController extends Controller
 		return redirect()->route('usuarios.listar');
     }    
 
-    public function editar(Request $request)
+    public function editar_usuario(Request $request)
     {
         $usuario = User::find($request->input('id'));
         $usuario->name = $request['name'];
@@ -46,7 +70,7 @@ class UsuarioController extends Controller
         return redirect()->route('usuarios.listar');
     }   
 
-    public function excluir(Request $request)
+    public function excluir_usuario(Request $request)
     {
         $usuario = User::find($request->input('id'));
 

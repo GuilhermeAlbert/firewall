@@ -10,10 +10,10 @@ class DashboardController extends Controller
 {
     public function listar(Request $request)
     {
-        $usuarios = User::all()->count();
+        $usuarios_ativos = User::all()->count();
 
         return response()->view('layouts.app.dashboard.listar', [
-            'usuarios' => $usuarios,
+            'usuarios_ativos' => $usuarios_ativos,
         ]);    	
     }
 }

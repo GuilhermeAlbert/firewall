@@ -34,7 +34,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12 mb-12 mb-sm-0">
 								<label for="password">Password</label>
-								<input type="text" class="form-control" value="{{ $usuario->password }}" name="password" id="password" placeholder="Password" autocomplete="off">
+								<input type="password" class="form-control" value="{{ $usuario->password }}" name="password" id="password" placeholder="Password" autocomplete="off">
 							</div>
 						</div>
 						<div class="form-group row">

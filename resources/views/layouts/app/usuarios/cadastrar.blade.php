@@ -14,7 +14,7 @@
 
           	<div class="col-lg-12">
             	<div class="p-5">
-					<form class="user" method="post" name="form_user_add" action="{{ route('usuarios.cadastrar') }}">
+					<form class="user" method="post" name="form_user_add" action="{{ route('usuarios.cadastrar_usuario') }}">
 						@csrf
 						<div class="form-group row">
 							<div class="col-sm-12 mb-12 mb-sm-0">
@@ -31,7 +31,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12 mb-12 mb-sm-0">
 								<label for="password">Password</label>
-								<input type="text" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off">
+								<input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off">
 							</div>
 						</div>
 						<div class="form-group row">
