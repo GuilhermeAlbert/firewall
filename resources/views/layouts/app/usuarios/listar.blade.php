@@ -24,7 +24,6 @@
 			              		<th>Nome</th>
 			              		<th>E-mail</th>
 			              		<th>Permissão</th>
-			              		{{-- <th>Nível de acesso</th> --}}
 			              		<th>Status</th>
 			              		@if (Auth::user()->id_permissao != 2)
 			              			<th>Ações</th>
@@ -32,21 +31,12 @@
 			            	</tr>
 			          	</thead>
 		          		<tbody>
-		          			@foreach ($usuarios as $key => $usuario): 
+		          			@foreach ($usuarios as $key => $usuario)
 					            <tr>
 					              	<td>{{ $usuario->id }}</td>
 					              	<td>{{ $usuario->name }}</td>
 					              	<td>{{ $usuario->email }}</td>
 					              	<td>{{ $usuario->permissao_descricao }}</td>
-					              	{{--
-					              	<td>
-					              		@if ($usuario->nivel == 'U') 
-					              			Usuário
-					              		@else
-					              			Sistema
-					              		@endif
-					              	</td>
-					              	--}}
 					              	<td>
 					              		@if ($usuario->status == 'A') 
 					              			Ativo

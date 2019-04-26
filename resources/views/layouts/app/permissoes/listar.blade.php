@@ -20,7 +20,7 @@
 		            	</tr>
 		          	</thead>
 	          		<tbody>
-	          			@foreach ($permissoes as $key => $permissao): 
+	          			@foreach ($permissoes as $key => $permissao) 
 				            <tr>
 				              	<td>{{ $permissao->id }}</td>
 				              	<td>{{ $permissao->descricao }}</td>
