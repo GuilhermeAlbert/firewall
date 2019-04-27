@@ -1,15 +1,15 @@
 <?php
 
-Route::prefix('dashboard')->group(function () {
+Route::prefix('dashboard')->middleware(['auth'])->group(function () {
     Route::name('dashboard.')
-    ->group(function () {
+        ->group(function () {
 
-        // GET ROUTES
-        Route::get('/listar', 'DashboardController@listar')->name('listar');
+            // GET ROUTES
+            Route::get('/listar', 'DashboardController@listar')->name('listar');
     });
 });
 
-Route::prefix('usuarios')->group(function () {
+Route::prefix('usuarios')->middleware(['auth'])->group(function () {
     Route::name('usuarios.')
     ->group(function () {
 
@@ -26,7 +26,7 @@ Route::prefix('usuarios')->group(function () {
     });
 });
 
-Route::prefix('permissoes')->group(function () {
+Route::prefix('permissoes')->middleware(['auth'])->group(function () {
     Route::name('permissoes.')
     ->group(function () {
 
@@ -35,7 +35,7 @@ Route::prefix('permissoes')->group(function () {
     });
 });
 
-Route::prefix('relatorios')->group(function () {
+Route::prefix('relatorios')->middleware(['auth'])->group(function () {
     Route::name('relatorios.')
     ->group(function () {
 
@@ -44,7 +44,7 @@ Route::prefix('relatorios')->group(function () {
     });
 });
 
-Route::prefix('firewall')->group(function () {
+Route::prefix('firewall')->middleware(['auth'])->group(function () {
     Route::name('firewall.')
     ->group(function () {
 
