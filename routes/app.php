@@ -52,3 +52,12 @@ Route::prefix('firewall')->middleware(['auth'])->group(function () {
         Route::get('/listar', 'FirewallController@listar')->name('listar');
     });
 });
+
+Route::prefix('log_acesso')->middleware(['auth'])->group(function () {
+    Route::name('log_acesso.')
+    ->group(function () {
+
+        // GET ROUTES
+        Route::get('/listar', 'LogAcessoController@listar')->name('listar');
+    });
+});

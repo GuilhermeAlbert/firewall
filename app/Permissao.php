@@ -9,9 +9,7 @@ class Permissao extends Model
     protected $table = 'permissoes';
 
     protected $fillable = [
-        '',
-        '',
-        '',
-        '',
+        'descricao',
+        'status',
     ];
 }

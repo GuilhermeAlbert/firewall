@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use App\LogAcesso;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -56,23 +58,32 @@ class LoginController extends Controller
         }
         $this->incrementLoginAttempts($request);
 
-        /**/
-        /**
-         * IMPLEMENTE LÓGICA PARA SALVAR O LOG AQUI
-         */
+        // SALVA LOG DE ACESSO PARA LOGIN
+        // $log_acesso = new LogAcesso();
+        // $log_acesso->endereco_ip = $_SERVER['REMOTE_ADDR'];
+        // $log_acesso->tipo = "login";
+        // $log_acesso->id_usuario = Auth::user()->id;
+        // $log_acesso->save();
 
         return $this->sendFailedLoginResponse($request);
     }
 
 
     public function logout(Request $request)
-    {
+    {   
+        // $id_usuario = Auth::user()->id;
+        
         $this->guard()->logout();
 
         $request->session()->invalidate();
-        /**
-         * IMPLEMENTE LÓGICA PARA SALVAR O LOG AQUI
-         * */
+
+        // SALVA LOG DE ACESSO PARA LOGOUT
+        // $log_acesso = new LogAcesso();
+        // $log_acesso->endereco_ip = $_SERVER['REMOTE_ADDR'];
+        // $log_acesso->tipo = "logout";
+        // $log_acesso->id_usuario = $id_usuario;
+        // $log_acesso->save();         
+
         return $this->loggedOut($request) ?: redirect('/');
     }
     
