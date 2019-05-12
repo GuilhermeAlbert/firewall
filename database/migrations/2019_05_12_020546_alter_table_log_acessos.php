@@ -14,8 +14,8 @@ class AlterTableLogAcessos extends Migration
     public function up()
     {
         Schema::table('log_acessos', function (Blueprint $table) {        
-            $table->unsignedInteger('id_usuario');
-            $table->foreign('id_usuario')->references('id')->on('users');
+            // $table->unsignedInteger('id_usuario');
+            // $table->foreign('id_usuario')->references('id')->on('users');
         });   
     }
 
