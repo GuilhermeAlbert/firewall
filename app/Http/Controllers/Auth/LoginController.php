@@ -62,7 +62,7 @@ class LoginController extends Controller
         // $log_acesso = new LogAcesso();
         // $log_acesso->endereco_ip = $_SERVER['REMOTE_ADDR'];
         // $log_acesso->tipo = "login";
-        // $log_acesso->id_usuario = Auth::user()->id;
+        // $log_acesso->id_usuario = 1;
         // $log_acesso->save();
 
         return $this->sendFailedLoginResponse($request);
