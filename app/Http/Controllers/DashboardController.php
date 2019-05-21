@@ -8,12 +8,12 @@ use App\User;
 
 class DashboardController extends Controller
 {
-    public function listar(Request $request)
+    public function list(Request $request)
     {
-        $usuarios_ativos = User::all()->count();
+        $active_users = User::all()->count();
 
-        return response()->view('layouts.app.dashboard.listar', [
-            'usuarios_ativos' => $usuarios_ativos,
+        return response()->view('layouts.app.dashboard.list', [
+            'active_users' => $active_users,
         ]);    	
     }
 }

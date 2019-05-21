@@ -1,66 +1,66 @@
 <?php
 
-Route::prefix('dashboard')->group(function () {
-    Route::name('dashboard.')
-        ->group(function () {
+    Route::prefix('admin')->middleware(['auth'])->group(function () {
 
-            // GET ROUTES
-            Route::get('/listar', 'DashboardController@listar')->name('listar');
-    });
-});
+        Route::prefix('dashboard')->group(function () {
+            Route::name('dashboard.')
+                ->group(function () {
+        
+                    // GET ROUTES
+                    Route::get('/list', 'DashboardController@list')->name('list');
+            });
+        });
+        
+        Route::prefix('users')->group(function () {
+            Route::name('users.')
+            ->group(function () {
 
-Route::prefix('admin')->middleware(['auth'])->group(function () {
+                // GET ROUTES
+                Route::get('/list', 'UserController@list')->name('list');
+                Route::get('/add', 'UserController@add')->name('add'); 
+                Route::get('/edit/{id}', 'UserController@edit')->name('edit');
 
-    Route::prefix('usuarios')->group(function () {
-        Route::name('usuarios.')
-        ->group(function () {
+                // POST ROUTES
+                Route::post('/add', 'UserController@add_user')->name('add_user');    
+                Route::post('/edit_user','UserController@edit_user')->name('edit_user');
+                Route::post('/delete_user','UserController@delete_user')->name('delete_user');    
+                                        
+            });
+        });
 
-            // GET ROUTES
-            Route::get('/listar', 'UsuarioController@listar')->name('listar');
-            Route::get('/cadastrar', 'UsuarioController@cadastrar')->name('cadastrar'); 
-            Route::get('/editar/{id}', 'UsuarioController@editar')->name('editar');
+        Route::prefix('permissions')->group(function () {
+            Route::name('permissions.')
+            ->group(function () {
 
-            // POST ROUTES
-            Route::post('/cadastrar', 'UsuarioController@cadastrar_usuario')->name('cadastrar_usuario');    
-            Route::post('/editar_usuario','UsuarioController@editar_usuario')->name('editar_usuario');
-            Route::post('/excluir','UsuarioController@excluir_usuario')->name('excluir_usuario');    
-                                    
+                // GET ROUTES
+                Route::get('/list', 'PermissionController@list')->name('list');
+            });
+        });
+
+        Route::prefix('reports')->group(function () {
+            Route::name('reports.')
+            ->group(function () {
+
+                // GET ROUTES
+                Route::get('/list', 'ReportController@list')->name('list');
+            });
+        });
+
+        Route::prefix('firewall')->group(function () {
+            Route::name('firewall.')
+            ->group(function () {
+
+                // GET ROUTES
+                Route::get('/list', 'FirewallController@list')->name('list');
+            });
+        });
+
+        Route::prefix('activity_logs')->group(function () {
+            Route::name('activity_logs.')
+            ->group(function () {
+
+                // GET ROUTES
+                Route::get('/list', 'ActivityLogController@list')->name('list');
+            });
         });
     });
-
-    Route::prefix('permissoes')->group(function () {
-        Route::name('permissoes.')
-        ->group(function () {
-
-            // GET ROUTES
-            Route::get('/listar', 'PermissaoController@listar')->name('listar');
-        });
-    });
-
-    Route::prefix('relatorios')->group(function () {
-        Route::name('relatorios.')
-        ->group(function () {
-
-            // GET ROUTES
-            Route::get('/listar', 'RelatorioController@listar')->name('listar');
-        });
-    });
-
-    Route::prefix('firewall')->group(function () {
-        Route::name('firewall.')
-        ->group(function () {
-
-            // GET ROUTES
-            Route::get('/listar', 'FirewallController@listar')->name('listar');
-        });
-    });
-
-    Route::prefix('log_acesso')->group(function () {
-        Route::name('log_acesso.')
-        ->group(function () {
-
-            // GET ROUTES
-            Route::get('/listar', 'LogAcessoController@listar')->name('listar');
-        });
-    });
-});

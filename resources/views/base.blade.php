@@ -38,18 +38,18 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Pronto para sair em segurança?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{ __('logout_modal.ready_to_logout') }}</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Clique em "Sair", para finalizar a sessão corrente.</div>
+                <div class="modal-body">{{ __('logout_modal.click_logout') }}</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ __('logout_modal.cancel') }}</button>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-primary" href="{{ route('logout') }}">Sair</button>
+                        <button type="submit" class="btn btn-primary" href="{{ route('logout') }}">{{ __('logout_modal.logout') }}</button>
                     </form>
                     
                 </div>

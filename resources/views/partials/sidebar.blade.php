@@ -13,7 +13,7 @@
     </div>       
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('dashboard.listar') }}">
+        <a class="nav-link" href="{{ route('dashboard.list') }}">
             <i class="fas fa-chart-bar"></i>
             <span>{{ __('sidebar.dashboard') }}</span>
         </a>
@@ -101,14 +101,14 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('usuarios.listar') }}">
+        <a class="nav-link" href="{{ route('users.list') }}">
             <i class="fas fa-user"></i>
             <span>{{ __('sidebar.users') }}</span>
         </a>
     </li> 
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('permissoes.listar') }}">
+        <a class="nav-link" href="{{ route('permissions.list') }}">
             <i class="fas fa-shield-alt"></i>
             <span>{{ __('sidebar.permission') }}</span>
         </a>

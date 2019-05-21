@@ -19,8 +19,9 @@ class User extends Authenticatable
         'name', 
         'email', 
         'password',
-        'status',
-        'id_permissao'
+        'status_id',
+        'access_level_id',
+        'permission_id',
     ];
 
     /**
