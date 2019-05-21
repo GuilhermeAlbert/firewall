@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use DB;
 use App\User;
 use App\Permission;
+use App\ModificationLog;
 
 class UserController extends Controller
 {
@@ -56,6 +58,17 @@ public function list(Request $request)
         $users->permission_id = $request->input('permission_id');
         $users->save();
 
+        // Salva log de modificação
+        $log = new ModificationLog();
+        $log->ip_address = $_SERVER['REMOTE_ADDR'];
+        $log->type = 'add';
+        $log->object = 'add';
+        $log->before = 'add';
+        $log->after =  'add';
+        $log->description = 'new user';
+        $log->user_id = Auth::user()->id;
+        $log->save();        
+
 		return redirect()->route('users.list');
     }    
 
@@ -67,6 +80,17 @@ public function list(Request $request)
         $user->password = Hash::make($request['password']);
         $user->permission_id = $request['permission_id'];        
         $user->save();
+
+        // Salva log de modificação
+        $log = new ModificationLog();
+        $log->ip_address = $_SERVER['REMOTE_ADDR'];
+        $log->type = 'edit';
+        $log->object = $request->input('id');
+        $log->before = 'edit';
+        $log->after =  'edit';
+        $log->description = 'edit user';
+        $log->user_id = Auth::user()->id;
+        $log->save();  
 
         return redirect()->route('users.list');
     }   
@@ -80,6 +104,17 @@ public function list(Request $request)
             try {
                 $user->status_id = 3;
                 $user->save();
+
+                // Salva log de modificação
+                $log = new ModificationLog();
+                $log->ip_address = $_SERVER['REMOTE_ADDR'];
+                $log->type = 'delete';
+                $log->object = $request->input('id');
+                $log->before = 'delete';
+                $log->after =  'delete';
+                $log->description = 'delete user';
+                $log->user_id = Auth::user()->id;
+                $log->save();                  
 
                 return redirect()->route('users.list');
             } catch (Exception $e) {
