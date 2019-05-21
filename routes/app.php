@@ -1,14 +1,15 @@
 <?php
 
-Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::prefix('dashboard')->group(function () {
-        Route::name('dashboard.')
-            ->group(function () {
+Route::prefix('dashboard')->group(function () {
+    Route::name('dashboard.')
+        ->group(function () {
 
-                // GET ROUTES
-                Route::get('/listar', 'DashboardController@listar')->name('listar');
-        });
+            // GET ROUTES
+            Route::get('/listar', 'DashboardController@listar')->name('listar');
     });
+});
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     Route::prefix('usuarios')->group(function () {
         Route::name('usuarios.')

@@ -18,14 +18,14 @@
                                     <form class="user" method="post" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email" aria-describedby="emailHelp" placeholder="Seu e-mail">
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email" aria-describedby="emailHelp" placeholder="{{ __('login.your_mail') }}">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="{{ __('login.your_password') }}">
                                         </div>
 
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Entrar
+                                            {{ __('login.login') }}
                                         </button>
                                         <hr>
                                     </form>
@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="p-5">
-                                    <p style="color: black;">O acesso inicial se dá com usuário <strong>adm@frw.com</strong> e senha <strong>adm</strong>.</p>
+                                    <p style="color: black;">{{ __('login.message') }}</p>
                                 </div>
                             </div>
                         </div>
