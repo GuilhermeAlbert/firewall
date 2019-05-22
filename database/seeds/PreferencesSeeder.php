@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SettingsSeeder extends Seeder
+class PreferencesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,13 +11,11 @@ class SettingsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('settings')->insert([
-            'app_name' => 'Firewall',
+        DB::table('preferences')->insert([
             'locale' => 'pt-br',
-            'callback_locale' => 'en',
-            'debug' => 'false',
-            'debugbar' => 'false',
-            'timezone' => 'UTC',
+            'receive_log_emails' => 'true',
+            'user_id' => 1,
+            'status_id' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),	 
         ]); 

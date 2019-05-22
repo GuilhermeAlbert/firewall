@@ -4,6 +4,7 @@ return [
     'app_name' => 'Firewall',
     'system' => 'Sistema',
     'dashboard' => 'Dashboard',
+    'settings' => 'Configurações',
     
     'report' => 'Relatórios',
     'control' => 'Controle',

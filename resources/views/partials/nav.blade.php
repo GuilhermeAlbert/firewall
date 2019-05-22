@@ -14,14 +14,14 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ route('profile.edit') }}">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     {{ __('nav.profile') }}
                 </a>                
 
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ route('preferences.list') }}">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    {{ __('nav.settings') }}
+                    {{ __('nav.preferences') }}
                 </a>                
 
                 <a class="dropdown-item" href="{{ route('activity_logs.list') }}">

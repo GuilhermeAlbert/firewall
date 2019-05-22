@@ -15,7 +15,12 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('language')->nullable(true);              
+            $table->string('app_name')->nullable(true);
+            $table->enum('locale', ['pt-br', 'en', 'es'])->default('pt-br')->nullable(true);
+            $table->enum('callback_locale', ['pt-br', 'en', 'es'])->default('en')->nullable(true);
+            $table->enum('debug', ['true', 'false'])->default('false')->nullable(true);
+            $table->enum('debugbar', ['true', 'false'])->default('false')->nullable(true);
+            $table->string('timezone')->nullable(true)->default('UTC');
             $table->timestamps();
         });
     }

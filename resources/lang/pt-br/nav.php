@@ -3,6 +3,6 @@
 return [
     'profile' => 'Perfil',
     'activity_logs' => 'Log de atividades',
-    'settings' => 'Configurações',
+    'preferences' => 'Preferências',
     'logout' => 'Logout'
 ];

@@ -37,6 +37,13 @@
     </li> 
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('settings.list') }}">
+            <i class="fas fa-cog"></i>
+            <span>{{ __('sidebar.settings') }}</span>
+        </a>
+    </li>      
+
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGerenciamento" aria-expanded="true" aria-controls="collapseGerenciamento">
             <i class="fas fa-fw fa-folder"></i>
             <span>{{ __('sidebar.management') }}</span>

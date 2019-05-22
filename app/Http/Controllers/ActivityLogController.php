@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use AccessLog;
+use App\AccessLog;
 
 class ActivityLogController extends Controller
 {

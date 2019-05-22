@@ -3,8 +3,8 @@
 @section('content')
 <div class="container-fluid">
 
-  	<h1 class="h3 mb-2 text-gray-800">Log de atividades</h1>
-  	<p class="mb-4">Tenha o controle das suas atividades realizadas no sistema</p>
+  	<h1 class="h3 mb-2 text-gray-800">{{ __('activity_logs.activity_logs') }}</h1>
+  	<p class="mb-4">{{ __('activity_logs.have_a_control') }}</p>
 
   	<!-- DataTales Example -->
   	<div class="card shadow mb-4">
@@ -14,16 +14,16 @@
 		          	<thead>
 		            	<tr>
 		              		<th>#</th>
-		              		<th>Descrição</th>
-		              		<th>Data</th>
+		              		<th>{{ __('activity_logs.description') }}</th>
+		              		<th>{{ __('activity_logs.date') }}</th>
 		            	</tr>
 		          	</thead>
 	          		<tbody>
-	          			@foreach ($log_acessos as $key => $log_acesso) 
+	          			@foreach ($access_logs as $key => $access_log) 
 				            <tr>
-				              	<td>{{ $log_acesso->id }}</td>
-				              	<td>Foi efetuado {{ $log_acesso->tipo }} no endereço IP {{ $log_acesso->endereco_ip }}</td>
-                                <td>{{ date( 'd/m/Y H:m' , strtotime($log_acesso->created_at)) }}</td>
+				              	<td>{{ $access_log->id }}</td>
+				              	<td>{{ __('activity_logs.description_access_log') }}</td>
+                                <td>{{ date( 'd/m/Y H:m' , strtotime($access_log->created_at)) }}</td>
 				            </tr>
 			            @endforeach
 			        </tbody>

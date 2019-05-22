@@ -10,6 +10,15 @@
                     Route::get('/list', 'DashboardController@list')->name('list');
             });
         });
+
+        Route::prefix('settings')->group(function () {
+            Route::name('settings.')
+                ->group(function () {
+        
+                    // GET ROUTES
+                    Route::get('/list', 'SettingController@list')->name('list');
+            });
+        });        
         
         Route::prefix('users')->group(function () {
             Route::name('users.')
@@ -63,4 +72,23 @@
                 Route::get('/list', 'ActivityLogController@list')->name('list');
             });
         });
+
+        Route::prefix('preferences')->group(function () {
+            Route::name('preferences.')
+                ->group(function () {
+        
+                    // GET ROUTES
+                    Route::get('/list', 'PreferenceController@list')->name('list');
+            });
+        });   
+
+        Route::prefix('profile')->group(function () {
+            Route::name('profile.')
+                ->group(function () {
+        
+                    // GET ROUTES
+                    Route::get('/list', 'ProfileController@list')->name('list');
+                    Route::get('/edit', 'ProfileController@edit')->name('edit');
+            });
+        });                 
     });
