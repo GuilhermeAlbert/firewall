@@ -16,7 +16,7 @@
                 ->group(function () {
         
                     // GET ROUTES
-                    Route::get('/list', 'SettingController@list')->name('list');
+                    Route::get('/edit', 'SettingController@edit')->name('edit');
             });
         });        
         

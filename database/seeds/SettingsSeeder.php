@@ -14,7 +14,7 @@ class SettingsSeeder extends Seeder
         DB::table('settings')->insert([
             'app_name' => 'Firewall',
             'locale' => 'pt-br',
-            'callback_locale' => 'en',
+            'fallback_locale' => 'en',
             'debug' => 'false',
             'debugbar' => 'false',
             'timezone' => 'UTC',

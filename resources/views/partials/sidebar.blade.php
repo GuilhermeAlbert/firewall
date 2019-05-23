@@ -37,7 +37,7 @@
     </li> 
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('settings.list') }}">
+        <a class="nav-link" href="{{ route('settings.edit') }}">
             <i class="fas fa-cog"></i>
             <span>{{ __('sidebar.settings') }}</span>
         </a>

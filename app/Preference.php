@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Settings extends Model
+class Preference extends Model
 {
-    protected $table = 'settings';
+    protected $table = 'preferences';
 
     protected $fillable = [
-        'language',
+        'locale',
     ];
 }

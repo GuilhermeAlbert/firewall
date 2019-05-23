@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class FirewallController extends Controller
 {
-    public function listar(Request $request)
+    public function list(Request $request)
     {
-        return response()->view('layouts.app.firewall.listar');
+        return response()->view('layouts.app.firewall.list');
     }
 }

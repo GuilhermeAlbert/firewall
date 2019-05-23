@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             SettingsSeeder::class,
             PreferencesSeeder::class,
+            LanguagesSeeder::class,
         ]);           	
     }
 }
