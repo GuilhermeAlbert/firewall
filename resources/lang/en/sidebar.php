@@ -2,37 +2,38 @@
 
 return [
     'app_name' => 'Firewall',
-    'system' => 'Sistema',
+    'system' => 'System',
     'dashboard' => 'Dashboard',
+    'settings' => 'Settings',
     
-    'report' => 'Relatórios',
-    'control' => 'Controle',
-    'report_access'=> 'Relatório de acessos',
-    'report_deny'=> 'Relatório de bloqueio',
-    'report_allow'=> 'Relatório de liberação',
-    'report_devices'=> 'Relatório de dispositivos',
-    'report_group'=> 'Relatório de grupos',
+    'report' => 'Reports',
+    'control' => 'Control',
+    'report_access'=> 'Access report',
+    'report_deny'=> 'Deny report',
+    'report_allow'=> 'Allow report',
+    'report_devices'=> 'Devices report',
+    'report_group'=> 'Groups report',
     
-    'management' => 'Gerenciamento',
-    'devices' => 'Dispositivos',
-    'groups' => 'Grupos',
+    'management' => 'Management',
+    'devices' => 'Devices',
+    'groups' => 'Groups',
 
-    'websites_deny' => 'Bloqueio de sites',
-    'deny_by_mac' => 'Endereço MAC',
-    'deny_by_ip' => 'Endereço IP',
-    'deny_by_keywords' => 'Palavras-chave',
+    'websites_deny' => 'Websites deny',
+    'deny_by_mac' => 'MAC address',
+    'deny_by_ip' => 'IP address',
+    'deny_by_keywords' => 'Keywords',
     
-    'websites_allow' => 'Liberação de sites',
-    'allow_by_mac' => 'Endereço MAC',
-    'allow_by_ip' => 'Endereço IP',
-    'allow_by_keywords' => 'Palavras-chave',
+    'websites_allow' => 'Websites allow',
+    'allow_by_mac' => 'MAC address',
+    'allow_by_ip' => 'IP address',
+    'allow_by_keywords' => 'Keywords',
     
-    'monitoring' => 'Monitoramento',
-    'doors' => 'Portas',
+    'monitoring' => 'Monitoring',
+    'doors' => 'Ports',
     'http' => 'HTTP',
     'https' => 'HTTPS',
 
-    'maintenance' => 'Manutenção',
-    'users' => 'Usuários',
-    'permission' => 'Permissões'
+    'maintenance' => 'Maintenance',
+    'users' => 'Users',
+    'permission' => 'Permissions'
 ]; 

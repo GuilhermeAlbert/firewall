@@ -22,7 +22,7 @@ class CreateSettingsTable extends Migration
             $table->enum('debugbar', ['true', 'false'])->default('false')->nullable(true);
             $table->string('timezone')->nullable(true)->default('UTC');
             $table->string('mail_driver')->nullable(true)->default('smtp');
-            $table->string('mail_port')->nullable(true)->default('2525');
+            $table->string('mail_port')->nullable(true)->default('587');
             $table->string('mail_host')->nullable(true);
             $table->string('mail_username')->nullable(true);
             $table->string('mail_password')->nullable(true);
