@@ -2,9 +2,9 @@
 
 return [
     'dashboard' => 'Dashboard',
-    'active_users' => 'Usuários ativos',
-    'created_rules' => 'Regras criadas',
-    'disponibility' => 'Disponibilidade',
-    'online_devices' => 'Dispositivos online',
+    'active_users' => 'Active users',
+    'created_rules' => 'Created users',
+    'disponibility' => 'Disponibility',
+    'online_devices' => 'Online devices',
     'some_text_here' => 'Some text here.'
 ];

@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'permissions' => 'Permissões',
-    'permissions_list' => 'Listagem de permissões no sistema.',
-    'description' => 'Descrição',
-    'access_level' => 'Nível de acesso',
+    'permissions' => 'Permissions',
+    'permissions_list' => 'Permissions list.',
+    'description' => 'Description',
+    'access_level' => 'Access level',
     'status' => 'Status',
-    'system' => 'Sistema',
-    'user' => 'Usuário',
-    'active' => 'Ativo',
-    'inactive' => 'Inativo'
+    'system' => 'System',
+    'user' => 'User',
+    'active' => 'Active',
+    'inactive' => 'Inactive'
 ];

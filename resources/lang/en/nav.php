@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'profile' => 'Perfil',
-    'activity_logs' => 'Log de atividades',
-    'preferences' => 'Preferências',
+    'profile' => 'Profile',
+    'activity_logs' => 'Activity logs',
+    'preferences' => 'Preferences',
     'logout' => 'Logout'
 ];

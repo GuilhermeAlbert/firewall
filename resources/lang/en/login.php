@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'mail' => 'E-Mail',
-    'your_mail' => 'Seu e-mail',
-    'your_password' => 'Sua senha',
-    'login' => 'Entrar',
-    'message' => 'O acesso inicial se dá com usuário adm@frw.com e senha adm.'
+    'mail' => 'Mail',
+    'your_mail' => 'Your mail',
+    'your_password' => 'Your password',
+    'login' => 'Login',
+    'message' => 'The initial access is with the user adm@frw.com and password adm.'
 ];
