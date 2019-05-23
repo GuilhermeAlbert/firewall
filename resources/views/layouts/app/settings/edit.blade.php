@@ -17,7 +17,7 @@
 					<form class="user" method="post" name="form_settings_edit" action="#">
 						@csrf
 
-                        @foreach($settings as $setting)
+                        
 						
                         <div class="form-group row">
                             <div class="col-sm-12 mb-12 mb-sm-0">
@@ -80,35 +80,35 @@
                         <div class="form-group row">
 							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="mail_driver">{{ __('settings.mail_driver') }}</label>
-								<input type="text" class="form-control" value="{{ $setting->mail_driver }}" name="mail_driver" id="mail_driver" placeholder="{{ __('settings.mail_driver') }}" autocomplete="off" disabled>
+								<input type="text" class="form-control" value="{{ $settings->mail_driver }}" name="mail_driver" id="mail_driver" placeholder="{{ __('settings.mail_driver') }}" autocomplete="off" disabled>
 							</div>
 
 							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="mail_port">{{ __('settings.mail_port') }}</label>
-								<input type="text" class="form-control" value="{{ $setting->mail_port }}" name="mail_port" id="mail_port" placeholder="{{ __('settings.mail_port') }}" autocomplete="off">
+								<input type="text" class="form-control" value="{{ $settings->mail_port }}" name="mail_port" id="mail_port" placeholder="{{ __('settings.mail_port') }}" autocomplete="off">
 							</div>
 
 							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="mail_host">{{ __('settings.mail_host') }}</label>
-								<input type="text" class="form-control" value="{{ $setting->mail_host }}" name="mail_host" id="mail_host" placeholder="{{ __('settings.mail_host') }}" autocomplete="off">
+								<input type="text" class="form-control" value="{{ $settings->mail_host }}" name="mail_host" id="mail_host" placeholder="{{ __('settings.mail_host') }}" autocomplete="off">
 							</div>
 
 							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="mail_username">{{ __('settings.mail_username') }}</label>
-								<input type="text" class="form-control" value="{{ $setting->mail_username }}" name="mail_username" id="mail_username" placeholder="{{ __('settings.mail_username') }}" autocomplete="off">
+								<input type="text" class="form-control" value="{{ $settings->mail_username }}" name="mail_username" id="mail_username" placeholder="{{ __('settings.mail_username') }}" autocomplete="off">
 							</div>
 
 							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="mail_password">{{ __('settings.mail_password') }}</label>
-								<input type="text" class="form-control" value="{{ $setting->mail_password }}" name="mail_password" id="mail_password" placeholder="{{ __('settings.mail_password') }}" autocomplete="off">
+								<input type="text" class="form-control" value="{{ $settings->mail_password }}" name="mail_password" id="mail_password" placeholder="{{ __('settings.mail_password') }}" autocomplete="off">
 							</div>
 
 							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="mail_encryption">{{ __('settings.mail_encryption') }}</label>
-								<input type="text" class="form-control" value="{{ $setting->mail_encryption }}" name="mail_encryption" id="mail_encryption" placeholder="{{ __('settings.mail_encryption') }}" autocomplete="off">
+								<input type="text" class="form-control" value="{{ $settings->mail_encryption }}" name="mail_encryption" id="mail_encryption" placeholder="{{ __('settings.mail_encryption') }}" autocomplete="off">
 							</div>
 						</div>                          
-                        @endforeach
+                        
 						
                         <div class="form-group row">
                             <div class="col-sm-12 mb-12 mb-sm-0">
