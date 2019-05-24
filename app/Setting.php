@@ -18,5 +18,7 @@ class Setting extends Model
         'mail_username',
         'mail_password',
         'mail_encryption',
+        'debug',
+        'debugbar',
     ];
 }
