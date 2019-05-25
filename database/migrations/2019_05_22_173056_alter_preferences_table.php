@@ -14,7 +14,7 @@ class AlterPreferencesTable extends Migration
     public function up()
     {
         Schema::table('preferences', function (Blueprint $table) {
-            $table->unsignedInteger('user_id')->after('receive_log_emails');
+            $table->unsignedInteger('user_id')->after('receive_log_mails');
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->unsignedInteger('status_id')->default(1)->after('user_id');

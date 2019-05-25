@@ -16,7 +16,7 @@ class CreatePreferencesTable extends Migration
         Schema::create('preferences', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('locale')->default('pt-br')->nullable(true);
-            $table->enum('receive_log_emails', ['true', 'false'])->default('false')->nullable(true);
+            $table->enum('receive_log_mails', ['true', 'false'])->default('false')->nullable(true);
             $table->timestamps();
         });
     }

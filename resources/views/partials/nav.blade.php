@@ -19,7 +19,7 @@
                     {{ __('nav.profile') }}
                 </a>                
 
-                <a class="dropdown-item" href="{{ route('preferences.list') }}">
+                <a class="dropdown-item" href="{{ route('preferences.edit') }}">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     {{ __('nav.preferences') }}
                 </a>                

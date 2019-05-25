@@ -81,7 +81,10 @@
                 ->group(function () {
         
                     // GET ROUTES
-                    Route::get('/list', 'PreferenceController@list')->name('list');
+                    Route::get('/edit', 'PreferenceController@edit')->name('edit');
+                    
+                    // POST ROUTES
+                    Route::post('/edit_preferences','PreferenceController@edit_preferences')->name('edit_preferences');
             });
         });   
 
