@@ -12,7 +12,7 @@ class LanguagesSeeder extends Seeder
     public function run()
     {
         DB::table('languages')->insert([
-            'description' => 'Portuguese',
+            'description' => 'Português',
             'fallback_description' => 'Brazillian Portuguese',
             'country' => 'Brazil',
             'initials' => 'pt-br',
@@ -30,7 +30,7 @@ class LanguagesSeeder extends Seeder
         ]); 
         
         DB::table('languages')->insert([
-            'description' => 'Spanish',
+            'description' => 'Español',
             'fallback_description' => 'Spanish',
             'country' => 'Spain',
             'initials' => 'es',

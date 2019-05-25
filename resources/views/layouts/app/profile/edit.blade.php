@@ -17,37 +17,27 @@
 					<form class="user" method="post" name="form_user_add" action="{{ route('users.edit_user') }}">
 						@csrf
 
-						<input type="hidden" name="id" value="{{ $id }}">
-
 						<div class="form-group row">
 							<div class="col-sm-12 mb-12 mb-sm-0">
 								<label for="name">{{ __('users.name') }}</label>
-								<input type="text" class="form-control" value="{{ $user->name }}" name="name" id="name" placeholder="{{ __('users.name') }}" autocomplete="off">
+								<input type="text" class="form-control" value="{{ $user->name }}" name="name" id="name" placeholder="{{ __('users.name') }}" autocomplete="off" disabled>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-sm-12 mb-12 mb-sm-0">
 								<label for="email">{{ __('users.mail') }}</label>
-								<input type="text" class="form-control" value="{{ $user->email }}" name="email" id="email" placeholder="{{ __('users.mail') }}" autocomplete="off">
+								<input type="text" class="form-control" value="{{ $user->email }}" name="email" id="email" placeholder="{{ __('users.mail') }}" autocomplete="off" disabled>
 							</div>
 						</div>
+
+						{{--
 						<div class="form-group row">
 							<div class="col-sm-12 mb-12 mb-sm-0">
 								<label for="password">{{ __('users.password') }}</label>
-								<input type="password" class="form-control" value="{{ $user->password }}" name="password" id="password" placeholder="{{ __('users.password') }}" autocomplete="off">
+								<input type="password" class="form-control" value="{{ $user->password }}" name="password" id="password" placeholder="{{ __('users.password') }}" autocomplete="off" disabled>
 							</div>
 						</div>
-						<div class="form-group row">
-							<div class="col-sm-12 mb-12 mb-sm-0">
-								<label for="permission_id">{{ __('users.permission_access_level') }}</label>
-								<select class="form-control" name="permission_id" id="permission_id">
-									@foreach($permissions as $permission)
-										<option value="{{ $permission->id }}">{{ $permission->description }}</option>
-									@endforeach
-								</select>
-							</div>
-						</div>
-						
+
 						<div class="form-group row">
 							<div class="col-sm-12 mb-12 mb-sm-0">
 								<button type="submit" class="btn btn-primary btn-user btn-block">
@@ -55,6 +45,7 @@
 								</button>						
 							</div>
 						</div>
+						--}}
 						
 					</form>
         		</div>

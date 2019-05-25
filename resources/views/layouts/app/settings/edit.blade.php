@@ -19,7 +19,7 @@
 						
                         <div class="form-group row">
                             <div class="col-sm-12 mb-12 mb-sm-0">
-                                <p>{{ __('settings.locale_settings') }}</p>
+                                <p><strong>{{ __('settings.locale_settings') }}</strong></p>
                             </div>
                         </div>
                         
@@ -28,11 +28,8 @@
 							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="locale">{{ __('settings.locale') }}</label>								
                                 <select class="form-control" name="locale" id="locale">
-                                    <!-- <option value="{{ $settings->locale }}">{{ $settings->locale }}</option> -->
                                     @foreach($languages as $language)
-                                        <option value="{{ $language->initials }}" @if($language->initials == $settings->locale)
-                                        selected
-                                        @endif >{{ $language->description }}</option>
+                                        <option value="{{ $language->initials }}" @if($language->initials == $settings->locale) selected @endif>{{ $language->description }}</option>
                                     @endforeach
                                 </select>                                
 							</div>
@@ -40,10 +37,8 @@
 							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="locale">{{ __('settings.fallback_locale') }}</label>								
                                 <select class="form-control" name="fallback_locale" id="fallback_locale">
-                                
-                                    <!-- <option value="{{ $settings->fallback_locale }}">{{ $settings->fallback_locale }}</option> -->
                                     @foreach($languages as $language)
-                                        <option value="{{ $language->initials }}">{{ $language->description }}</option>
+                                        <option value="{{ $language->initials }}" @if($language->initials == $settings->fallback_locale) selected @endif>{{ $language->description }}</option>
                                     @endforeach
                                 </select>                                
 							</div>
@@ -51,7 +46,7 @@
 
                         <div class="form-group row">
                             <div class="col-sm-12 mb-12 mb-sm-0">
-                                <hr><p>{{ __('settings.debug_settings') }}</p>
+                                <hr><p><strong>{{ __('settings.debug_settings') }}</strong></p>
                             </div>
                         </div>
 
@@ -60,23 +55,23 @@
                             <div class="col-sm-6 mb-6 mb-sm-0">
                                 <label for="debug">{{ __('settings.debug') }}</label>								
                                 <select class="form-control" name="debug" id="debug">
-                                    <option value="false">{{ __('settings.debug_false') }}</option>
-                                    <option value="true">{{ __('settings.debug_true') }}</option>
+                                    <option value="false" @if($settings->debug == 'false') selected @endif>{{ __('settings.debug_false') }}</option>
+                                    <option value="true" @if($settings->debug == 'true') selected @endif>{{ __('settings.debug_true') }}</option>
                                 </select>                                
                             </div>
 
                             <div class="col-sm-6 mb-6 mb-sm-0">
                                 <label for="debugbar">{{ __('settings.debugbar') }}</label>								
                                 <select class="form-control" name="debugbar" id="debugbar">
-                                    <option value="false">{{ __('settings.debugbar_false') }}</option>
-                                    <option value="true">{{ __('settings.debugbar_true') }}</option>                                    
+                                    <option value="false" @if($settings->debugbar == 'false') selected @endif>{{ __('settings.debugbar_false') }}</option>
+                                    <option value="true" @if($settings->debugbar == 'true') selected @endif>{{ __('settings.debugbar_true') }}</option>                                    
                                 </select>                                
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-12 mb-12 mb-sm-0">
-                                <hr><p>{{ __('settings.mail_settings') }}</p>
+                                <hr><p><strong>{{ __('settings.mail_settings') }}</strong></p>
                             </div>
                         </div>
 

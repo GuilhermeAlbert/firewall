@@ -14,10 +14,8 @@ class ProfileController extends Controller
 
     public function edit(Request $request)
     {
-    	// $user_id = Auth::user()->id;
+    	$user = User::all()->where('id' ,'=', $request->user()->id)->first();
     	
-        $user = 1; // User::where('id', Auth::user()->id);
-
         return response()->view('layouts.app.profile.edit', ['user' => $user]);
     }    
 }

@@ -19,7 +19,7 @@
 						
                         <div class="form-group row">
                             <div class="col-sm-12 mb-12 mb-sm-0">
-                                <p>{{ __('preferences.locale_preferences') }}</p>
+                                <p><strong>{{ __('preferences.locale_preferences') }}</strong></p>
                             </div>
                         </div>
                         
@@ -37,7 +37,7 @@
 
                         <div class="form-group row">
                             <div class="col-sm-12 mb-12 mb-sm-0">
-                                <hr><p>{{ __('preferences.mail_preferences') }}</p>
+                                <hr><p><strong>{{ __('preferences.mail_preferences') }}</strong></p>
                             </div>
                         </div>
 
