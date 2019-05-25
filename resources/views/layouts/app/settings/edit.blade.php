@@ -30,7 +30,9 @@
                                 <select class="form-control" name="locale" id="locale">
                                     <!-- <option value="{{ $settings->locale }}">{{ $settings->locale }}</option> -->
                                     @foreach($languages as $language)
-                                        <option value="{{ $language->initials }}">{{ $language->description }}</option>
+                                        <option value="{{ $language->initials }}" @if($language->initials == $settings->locale)
+                                        selected
+                                        @endif >{{ $language->description }}</option>
                                     @endforeach
                                 </select>                                
 							</div>

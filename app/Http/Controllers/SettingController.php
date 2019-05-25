@@ -15,11 +15,11 @@ class SettingController extends Controller
         return response()->view('layouts.app.settings.list');
     }
 
-    public function edit(Request $request, $locale='pt-br')
+    public function edit(Request $request)
     {
         $settings = Setting::first();
         $languages = Language::all();
-        App::setLocale($locale);
+        App::setLocale($settings->locale);
         return response()->view('layouts.app.settings.edit', [
             'languages' => $languages, 
             'settings' => $settings

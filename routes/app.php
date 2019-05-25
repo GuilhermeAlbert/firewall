@@ -16,7 +16,7 @@
                 ->group(function () {
         
                     // GET ROUTES
-                    Route::get('/edit/{locale?}/', 'SettingController@edit')->name('edit');
+                    Route::get('/edit/', 'SettingController@edit')->name('edit');
 
                     // POST ROUTES
                     Route::post('/edit_settings','SettingController@edit_settings')->name('edit_settings');
