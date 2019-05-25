@@ -10,5 +10,6 @@ class Preference extends Model
 
     protected $fillable = [
         'locale',
+        'receive_log_mails',
     ];
 }
