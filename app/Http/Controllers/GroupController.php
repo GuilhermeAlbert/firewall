@@ -10,7 +10,7 @@ class GroupController extends Controller
     public function list(Request $request)
     {
         // Getting groups data
-        $groups = Group::all();
+        $groups = Group::all()->where('status_id', '=', '1');
 
         // Sending data to view
         return response()->view('layouts.app.groups.list', [
