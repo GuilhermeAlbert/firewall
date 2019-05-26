@@ -34,11 +34,11 @@
                 Route::get('/list', 'UserController@list')->name('list');
                 Route::get('/add', 'UserController@add')->name('add'); 
                 Route::get('/edit/{id}', 'UserController@edit')->name('edit');
+                Route::get('/delete_user/{id}','UserController@delete_user')->name('delete_user');    
 
                 // POST ROUTES
                 Route::post('/add', 'UserController@add_user')->name('add_user');    
-                Route::post('/edit_user','UserController@edit_user')->name('edit_user');
-                Route::post('/delete_user','UserController@delete_user')->name('delete_user');    
+                Route::post('/edit_user','UserController@edit_user')->name('edit_user');                
                                         
             });
         });

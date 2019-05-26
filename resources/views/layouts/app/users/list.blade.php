@@ -60,9 +60,11 @@
 								                    	<i class="fas fa-pen"></i>
 							                		</button>
 							                	</a>
-							                    <button class="btn btn-danger" type="submit" title="{{ __('users.delete') }}" data-toggle="modal" data-target="#excluirModal">
-							                    	<i class="fas fa-trash-alt"></i>
-							                    </button>
+												<a href="{{ route('users.delete_user', ['id' => $user->id]) }}">
+													<button class="btn btn-danger" type="submit" title="{{ __('users.delete') }}">
+														<i class="fas fa-trash-alt"></i>
+													</button>
+												</a>
 						                    @endif
 						                </td>					                					            
 
@@ -75,32 +77,4 @@
 		    </div>
 	  	</div>
 	</div>
-
-	@foreach($users as $user)
-		<!-- Modal exclusão -->
-	    <div class="modal fade" id="excluirModal" tabindex="-1" role="dialog" aria-labelledby="excluirModalLabel" aria-hidden="true">
-	        <div class="modal-dialog" role="document">
-	            <div class="modal-content">
-	                <div class="modal-header">
-	                    <h5 class="modal-title" id="excluirModal">{{ __('users.attention') }}</h5>
-	                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	                        <span aria-hidden="true">&times;</span>
-	                    </button>
-	                </div>
-	                <div class="modal-body">
-						{{ __('users.sure_delete_question') }}
-	                </div>
-	                <div class="modal-footer">
-	                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('users.cancel') }}</button>
-	                    <form action="{{ route('users.delete_user') }}" method="POST">
-	                        @csrf
-	                        <button class="btn btn-primary" title="{{ __('users.delete') }}" type="submit">{{ __('users.delete') }}</button>
-	                    </form>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-		<!-- Modal exclusão -->
-	@endforeach
-
 @endsection

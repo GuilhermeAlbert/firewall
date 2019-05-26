@@ -117,10 +117,10 @@ class UserController extends Controller
         return redirect()->route('users.list');
     }   
 
-    public function delete_user(Request $request)
+    public function delete_user(Request $request, $id)
     {
         // Getting user by input id
-        $user = User::find($request->input('id'));
+        $user = User::find($id);
         
         // Don't delete the first user (adm)
         // if($user->id != 1){
