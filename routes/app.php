@@ -1,6 +1,11 @@
 <?php
 
-    Route::prefix('admin')->middleware(['auth'])->middleware(['checkLanguage'])->group(function () {
+    Route::prefix('admin')
+        ->middleware(['auth'])
+        ->middleware(['checkLanguage'])
+        ->middleware(['checkAppSettings'])
+        ->middleware(['checkMailSettings'])
+    ->group(function () {
 
         // DASHBOARD ROUTES
         Route::prefix('dashboard')->group(function () {

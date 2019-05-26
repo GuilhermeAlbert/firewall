@@ -13,8 +13,8 @@ class GroupsSeeder extends Seeder
     {
         // Populing database with family group
         DB::table('groups')->insert([
-            'title' => 'Família',
-            'description' => 'Família',
+            'title' => 'Residencial',
+            'description' => 'Residencial',
             'initial_time' => '00:00',
             'final_time' => '12:00',
             'html_icon' => 'fas fa-home',   
@@ -29,7 +29,8 @@ class GroupsSeeder extends Seeder
             'description' => 'Empresa',
             'initial_time' => '00:00',
             'final_time' => '12:00',
-            'html_icon' => 'fas fa-building',            
+            'html_icon' => 'fas fa-building',  
+            'status_id' => 2,          
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),	 
         ]);  
@@ -40,7 +41,8 @@ class GroupsSeeder extends Seeder
             'description' => 'Universidade',
             'initial_time' => '00:00',
             'final_time' => '12:00',
-            'html_icon' => 'fas fa-university',            
+            'html_icon' => 'fas fa-university', 
+            'status_id' => 2,           
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),	 
         ]);          

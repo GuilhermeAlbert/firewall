@@ -7,6 +7,7 @@ use App\Setting;
 use App\Language;
 use ModificationLog;
 use App;
+use Config;
 
 class SettingController extends Controller
 {
@@ -19,7 +20,7 @@ class SettingController extends Controller
     {
         $settings = Setting::first();
         $languages = Language::all();
-        
+
         return response()->view('layouts.app.settings.edit', [
             'languages' => $languages, 
             'settings' => $settings
@@ -36,6 +37,8 @@ class SettingController extends Controller
         $settings->debugbar = $request['debugbar'];
         $settings->mail_port = $request['mail_port'];
         $settings->mail_host = $request['mail_host'];
+        $settings->mail_from = $request['mail_from'];
+        $settings->mail_from_name = $request['mail_from_name'];
         $settings->mail_username = $request['mail_username'];
         $settings->mail_password = $request['mail_password'];
         $settings->mail_encryption = $request['mail_encryption'];
