@@ -19,7 +19,7 @@ class SettingController extends Controller
     {
         $settings = Setting::first();
         $languages = Language::all();
-        App::setLocale($settings->locale);
+        
         return response()->view('layouts.app.settings.edit', [
             'languages' => $languages, 
             'settings' => $settings

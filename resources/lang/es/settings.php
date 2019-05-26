@@ -22,8 +22,6 @@ return [
     'mail_driver' => 'Driver de e-mail',
     'mail_port' => 'Porta de e-mail',
     'mail_host' => 'Hospedeiro',
-    'mail_from' => '',
-    'mail_from_name' => '',
     'mail_username' => 'Usuário',
     'mail_password' => 'Senha',
     'mail_encryption' => 'Encriptação',

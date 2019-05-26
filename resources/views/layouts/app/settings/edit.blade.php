@@ -92,6 +92,16 @@
 							</div>
 
 							<div class="col-sm-6 mb-6 mb-sm-0">
+								<label for="mail_from">{{ __('settings.mail_from') }}</label>
+								<input type="text" class="form-control" value="{{ $settings->mail_from }}" name="mail_from" id="mail_from" placeholder="{{ __('settings.mail_from') }}" autocomplete="off">
+							</div>
+
+							<div class="col-sm-6 mb-6 mb-sm-0">
+								<label for="mail_from_name">{{ __('settings.mail_from_name') }}</label>
+								<input type="text" class="form-control" value="{{ $settings->mail_from_name }}" name="mail_from_name" id="mail_from_name" placeholder="{{ __('settings.mail_from_name') }}" autocomplete="off">
+							</div>                                                        
+
+							<div class="col-sm-6 mb-6 mb-sm-0">
 								<label for="mail_username">{{ __('settings.mail_username') }}</label>
 								<input type="text" class="form-control" value="{{ $settings->mail_username }}" name="mail_username" id="mail_username" placeholder="{{ __('settings.mail_username') }}" autocomplete="off">
 							</div>

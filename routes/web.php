@@ -13,12 +13,12 @@
 
 Route::get('/', function () {
     return view('layouts.login');
-});
+})->middleware(['checkLanguage']);
 
 Route::get('/welcome', function () {
     return view('welcome');
-});
+})->middleware(['checkLanguage']);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware(['checkLanguage']);
