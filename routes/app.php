@@ -2,6 +2,7 @@
 
     Route::prefix('admin')->middleware(['auth'])->group(function () {
 
+        // DASHBOARD ROUTES
         Route::prefix('dashboard')->group(function () {
             Route::name('dashboard.')
                 ->group(function () {
@@ -11,6 +12,7 @@
             });
         });
 
+        // SETTINGS ROUTES
         Route::prefix('settings')->group(function () {
             Route::name('settings.')
                 ->group(function () {
@@ -23,6 +25,7 @@
             });
         });        
         
+        // USERS ROUTES
         Route::prefix('users')->group(function () {
             Route::name('users.')
             ->group(function () {
@@ -40,6 +43,7 @@
             });
         });
 
+        // PERMISSION ROUTES
         Route::prefix('permissions')->group(function () {
             Route::name('permissions.')
             ->group(function () {
@@ -49,6 +53,7 @@
             });
         });
 
+        // REPORTS ROUTES
         Route::prefix('reports')->group(function () {
             Route::name('reports.')
             ->group(function () {
@@ -58,6 +63,7 @@
             });
         });
 
+        // FIREWALL ROUTES
         Route::prefix('firewall')->group(function () {
             Route::name('firewall.')
             ->group(function () {
@@ -67,6 +73,7 @@
             });
         });
 
+        // ACTIVITY LOGS ROUTES
         Route::prefix('activity_logs')->group(function () {
             Route::name('activity_logs.')
             ->group(function () {
@@ -76,6 +83,7 @@
             });
         });
 
+        // PREFERENCES ROUTES
         Route::prefix('preferences')->group(function () {
             Route::name('preferences.')
                 ->group(function () {
@@ -88,6 +96,7 @@
             });
         });   
 
+        // PROFILE ROUTES
         Route::prefix('profile')->group(function () {
             Route::name('profile.')
                 ->group(function () {
@@ -96,5 +105,16 @@
                     Route::get('/list', 'ProfileController@list')->name('list');
                     Route::get('/edit', 'ProfileController@edit')->name('edit');
             });
-        });                 
+        });   
+        
+        // GROUPS ROUTES
+        Route::prefix('groups')->group(function () {
+            Route::name('groups.')
+            ->group(function () {
+
+                // GET ROUTES
+                Route::get('/list', 'GroupController@list')->name('list');
+                Route::get('/select_group/{id}', 'GroupController@select_group')->name('select_group');
+            });
+        });        
     });

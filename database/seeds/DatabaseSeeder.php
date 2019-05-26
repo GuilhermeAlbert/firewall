@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             SettingsSeeder::class,
             PreferencesSeeder::class,
             LanguagesSeeder::class,
+            IconsSeeder::class,
+            GroupsSeeder::class,
         ]);           	
     }
 }

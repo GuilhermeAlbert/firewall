@@ -51,8 +51,8 @@
         <div id="collapseGerenciamento" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">{{ __('sidebar.control') }}</h6>
-                <a class="collapse-item" href="#">{{ __('sidebar.devices') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.groups') }}</a>
+                <a class="collapse-item" href="{{ route('groups.list') }}">{{ __('sidebar.groups') }}</a>
+                <!-- <a class="collapse-item" href="#">{{ __('sidebar.devices') }}</a> -->
             </div>
         </div>
     </li>  
