@@ -18,9 +18,13 @@ class SettingController extends Controller
 
     public function edit(Request $request)
     {
+        // Getting general settings
         $settings = Setting::first();
+
+        // Getting all languages
         $languages = Language::all();
 
+        // Rendering content on view
         return response()->view('layouts.app.settings.edit', [
             'languages' => $languages, 
             'settings' => $settings
