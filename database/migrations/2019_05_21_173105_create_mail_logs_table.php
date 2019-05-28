@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModificationLogsTable extends Migration
+class CreateMailLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateModificationLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('modification_logs', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('ip_address')->nullable(true);
-            $table->string('object')->nullable(true);
-            $table->timestamps(); 
+        Schema::create('mail_logs', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('from');
+            $table->string('to');
+            $table->enum('sended', ['false', 'true']);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateModificationLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modification_logs');
+        Schema::dropIfExists('mail_logs');
     }
 }

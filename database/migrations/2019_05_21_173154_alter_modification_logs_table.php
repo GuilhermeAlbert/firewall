@@ -14,10 +14,13 @@ class AlterModificationLogsTable extends Migration
     public function up()
     {
         Schema::table('modification_logs', function (Blueprint $table) {
-            $table->unsignedInteger('user_id')->after('description');
+            $table->unsignedInteger('user_id')->after('object');
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedInteger('status_id')->default(1)->after('user_id');
+            $table->unsignedInteger('operation_id')->after('user_id');
+            $table->foreign('operation_id')->references('id')->on('operation');            
+
+            $table->unsignedInteger('status_id')->default(1)->after('operation_id');
             $table->foreign('status_id')->references('id')->on('status');  
         });  
     }
@@ -31,6 +34,7 @@ class AlterModificationLogsTable extends Migration
     {
         Schema::table('modification_logs', function (Blueprint $table) {
             $table->dropColumn("user_id");
+            $table->dropColumn("operation_id");
             $table->dropColumn("status_id");
         });
     }

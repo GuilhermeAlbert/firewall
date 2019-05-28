@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterAccessLogsTable extends Migration
+class AlterMailLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class AlterAccessLogsTable extends Migration
      */
     public function up()
     {
-        Schema::table('access_logs', function (Blueprint $table) {
-            $table->unsignedInteger('user_id')->after('ip_address');
-            $table->foreign('user_id')->references('id')->on('users');   
+        Schema::table('mail_logs', function (Blueprint $table) {
+            $table->unsignedInteger('user_id')->after('sended');
+            $table->foreign('user_id')->references('id')->on('users');    
 
             $table->unsignedInteger('status_id')->default(1)->after('user_id');
             $table->foreign('status_id')->references('id')->on('status'); 
-        });         
+        });  
     }
 
     /**
@@ -29,7 +29,7 @@ class AlterAccessLogsTable extends Migration
      */
     public function down()
     {
-        Schema::table('access_logs', function (Blueprint $table) {
+        Schema::table('mail_logs', function (Blueprint $table) {
             $table->dropColumn("user_id");
             $table->dropColumn("status_id");
         });
