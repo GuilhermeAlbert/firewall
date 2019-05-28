@@ -73,14 +73,14 @@ class UserController extends Controller
         $preferences = new Preference();
         $preferences->locale = $settings->locale;
         $preferences->receive_log_mails = 'true';
-        $preferences->user_id = $request->user()->id;
+        $preferences->user_id = $user->id;
         $preferences->save();
 
         // Save modification logs
         // $log = new ModificationLog();
         // $log->ip_address = $_SERVER['REMOTE_ADDR'];
         // $log->type = 'add';
-        // $log->object = 'add';
+        // $log->object = $user->id;
         // $log->before = 'add';
         // $log->after =  'add';
         // $log->description = 'new user';
