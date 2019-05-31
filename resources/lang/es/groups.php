@@ -2,5 +2,5 @@
 
 return [
     'groups' => 'Grupos',
-    'groups_list' => 'Selecione o seu grupo acesso abaixo:'
+    'groups_list' => 'Seleccione su grupo de acceso abajo:'
 ];

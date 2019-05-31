@@ -10,7 +10,6 @@ return [
     'permission' => 'Permission',
     'status' => 'Status',
     'actions' => 'Actions',
-    'Delete' => 'Excluir',
     'active' => 'Active',
     'inactive' => 'Inactive',
     'password' => 'Password',

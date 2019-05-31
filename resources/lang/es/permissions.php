@@ -1,17 +1,17 @@
 <?php
 
 return [
-    'permissions' => 'Permissões',
-    'permissions_list' => 'Listagem de permissões no sistema.',
-    'description' => 'Descrição',
+    'permissions' => 'Permisos',
+    'permissions_list' => 'Listado de permisos en el sistema.',
+    'description' => 'Descripción',
     // 'administrator' => 'Administrador do sistema',
     // 'read' => 'Visualização',
     // 'read_edit' => 'Visualização e edição',
     // 'read_edit_delete' => 'Visualização, edição e exclusão',
-    'access_level' => 'Nível de acesso',
+    'access_level' => 'Nivel de acceso',
     'status' => 'Status',
     'system' => 'Sistema',
-    'user' => 'Usuário',
-    'active' => 'Ativo',
-    'inactive' => 'Inativo'
+    'user' => 'Usuario',
+    'active' => 'Activo',
+    'inactive' => 'Inactivo'
 ];

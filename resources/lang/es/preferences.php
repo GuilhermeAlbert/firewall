@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'preferences' => 'Preferências',
-    'preferences_message' => 'Ajuste as preferências pessoais.',
+    'preferences' => 'Preferencias',
+    'preferences_message' => 'Ajuste las preferencias personales.',
     'locale' => 'Idioma',
-    'locale_preferences' => 'Preferências de idioma',
-    'mail_preferences' => 'Preferências de e-mail',
-    'receive_log_mails' => 'Receber e-mails de logs',
-    'receive_log_mails_false' => 'Não',
-    'receive_log_mails_true' => 'Sim',
-    'save' => 'Salvar'
+    'locale_preferences' => 'Preferencias de idioma',
+    'mail_preferences' => 'Preferencias de e-mail',
+    'receive_log_mails' => 'Recibir e-mails de registros',
+    'receive_log_mails_false' => 'No',
+    'receive_log_mails_true' => 'Sí',
+    'save' => 'Guardar'
 ];

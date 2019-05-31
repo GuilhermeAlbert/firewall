@@ -2,8 +2,8 @@
 
 return [
     'mail' => 'E-Mail',
-    'your_mail' => 'Seu e-mail',
-    'your_password' => 'Sua senha',
+    'your_mail' => 'Su e-mail',
+    'your_password' => 'Su contrasẽna',
     'login' => 'Entrar',
-    'message' => 'O acesso inicial se dá com usuário adm@frw.com e senha adm.'
+    'message' => 'El acceso inicial se da con el usuario adm@frw.com y la contraseña adm.'
 ];

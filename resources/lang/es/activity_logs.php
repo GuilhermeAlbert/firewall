@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'activity_logs' => 'Log de atividades',
-    'have_a_control' => 'Tenha o controle das suas atividades realizadas no sistema',
-    'description' => 'Descrição',
-    'date' => 'Data',
-    'description_access_log' => 'Foi efetuado {{ $access_log->type }} no endereço IP {{ $access_log->ip_address }}'
+    'activity_logs' => 'Registro de actividades',
+    'have_a_control' => 'Tenga el control de sus actividades realizadas en el sistema',
+    'description' => 'Descripción',
+    'date' => 'Fecha',
+    'description_access_log' => 'Se ha efectuado {{ $access_log->type }} en la dirección IP {{ $access_log->ip_address }}'
 ]; 

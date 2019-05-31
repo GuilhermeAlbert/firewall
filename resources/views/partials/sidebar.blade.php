@@ -75,7 +75,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLiberacao" aria-expanded="true" aria-controls="collapseLiberacao">
             <i class="fas fa-eye"></i>
-            <span>Liberação de sites</span>
+            <span>{{ __('sidebar.websites_allow') }}</span>
         </a>
         <div id="collapseLiberacao" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">

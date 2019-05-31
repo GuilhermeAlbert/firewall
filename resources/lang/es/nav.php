@@ -2,7 +2,7 @@
 
 return [
     'profile' => 'Perfil',
-    'activity_logs' => 'Log de atividades',
-    'preferences' => 'Preferências',
+    'activity_logs' => 'Registro de actividades',
+    'preferences' => 'Preferencias',
     'logout' => 'Logout'
 ];

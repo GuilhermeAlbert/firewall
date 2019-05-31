@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'ready_to_logout' => 'Pronto para sair em segurança?',
-    'click_logout' => 'Clique em "Sair", para finalizar a sessão corrente.',
+    'ready_to_logout' => '¿Listo para salir con seguridad?',
+    'click_logout' => 'Haga clic en "Salir" para finalizar la sesión actual.',
     'cancel' => 'Cancelar',
-    'logout' => 'Sair'
+    'logout' => 'Salir'
 ];
