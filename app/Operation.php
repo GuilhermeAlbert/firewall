@@ -8,6 +8,8 @@ class Operation extends Model
 {
     protected $table = 'operation';
 
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'ip_address',
         'object',
@@ -15,4 +17,6 @@ class Operation extends Model
         'operation_id',
         'status_id',
     ];
+
+    protected $dates = ['created_at', 'deleted_at'];
 }

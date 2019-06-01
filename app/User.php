@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $primaryKey = 'id';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,6 +25,8 @@ class User extends Authenticatable
         'access_level_id',
         'permission_id',
     ];
+
+    protected $dates = ['created_at', 'deleted_at'];
 
     /**
      * The attributes that should be hidden for arrays.

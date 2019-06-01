@@ -77,15 +77,7 @@ class UserController extends Controller
         $preferences->save();
 
         // Save modification logs
-        // $log = new ModificationLog();
-        // $log->ip_address = $_SERVER['REMOTE_ADDR'];
-        // $log->type = 'add';
-        // $log->object = $user->id;
-        // $log->before = 'add';
-        // $log->after =  'add';
-        // $log->description = 'new user';
-        // $log->user_id = Auth::user()->id;
-        // $log->save();        
+        ModificationLog::saveLog($user->id, $request->user()->id, 1);       
 
 		return redirect()->route('users.list');
     }    
@@ -103,15 +95,7 @@ class UserController extends Controller
         $user->save();
 
         // Saving modification logs
-        // $log = new ModificationLog();
-        // $log->ip_address = $_SERVER['REMOTE_ADDR'];
-        // $log->type = 'edit';
-        // $log->object = $request->input('id');
-        // $log->before = 'edit';
-        // $log->after =  'edit';
-        // $log->description = 'edit user';
-        // $log->user_id = Auth::user()->id;
-        // $log->save();  
+        ModificationLog::saveLog($user->id, $request->user()->id, 2);
 
         // Sending data to view
         return redirect()->route('users.list');
@@ -123,7 +107,7 @@ class UserController extends Controller
         $user = User::find($id);
         
         // Don't delete the first user (adm)
-        // if($user->id != 1){
+        if($user->id != 1){
             
             // Trying to delete
             try {
@@ -132,15 +116,7 @@ class UserController extends Controller
                 $user->save();
 
                 // Saving modification log
-                // $log = new ModificationLog();
-                // $log->ip_address = $_SERVER['REMOTE_ADDR'];
-                // $log->type = 'delete';
-                // $log->object = $request->input('id');
-                // $log->before = 'delete';
-                // $log->after =  'delete';
-                // $log->description = 'delete user';
-                // $log->user_id = Auth::user()->id;
-                // $log->save();                  
+                ModificationLog::saveLog($user->id, $request->user()->id, 4);                
 
                 // Sending data to view
                 return redirect()->route('users.list');
@@ -150,9 +126,9 @@ class UserController extends Controller
                 // Sending data to view
                 return redirect()->route('users.list');
             }
-        // } else{
+        } else{
             // Sending data to view
-            // return redirect()->route('users.list');
-        // }
+            return redirect()->route('users.list');
+        }
     }     
 }

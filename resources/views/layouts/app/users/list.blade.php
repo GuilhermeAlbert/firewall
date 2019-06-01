@@ -36,7 +36,7 @@
 					              	<td>{{ $user->id }}</td>
 					              	<td>{{ $user->name }}</td>
 					              	<td>{{ $user->email }}</td>
-					              	<td>{{ $user->permission }}</td>
+					              	<td><?php $permission_description = "permissions.$user->permission"; ?>{{ __($permission_description) }}</td>
 					              	<td>
 					              		@if ($user->status_id == 1) 
 					              			{{ __('users.active') }}

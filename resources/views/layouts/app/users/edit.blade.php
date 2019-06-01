@@ -42,7 +42,9 @@
 								<label for="permission_id">{{ __('users.permission_access_level') }}</label>
 								<select class="form-control" name="permission_id" id="permission_id">
 									@foreach($permissions as $permission)
-										<option value="{{ $permission->id }}">{{ $permission->description }}</option>
+										<option value="{{ $permission->id }}" @if($user->permission_id == $permission->id) selected @endif>
+											<?php $permission_description = "permissions.$permission->description"; ?>{{ __($permission_description) }}
+										</option>
 									@endforeach
 								</select>
 							</div>

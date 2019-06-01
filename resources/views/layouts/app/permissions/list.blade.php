@@ -20,10 +20,11 @@
 		            	</tr>
 		          	</thead>
 	          		<tbody>
+					  
 	          			@foreach ($permissions as $key => $permission) 
 				            <tr>
 				              	<td>{{ $permission->id }}</td>
-				              	<td>{{ $permission->description }}</td>
+				              	<td><?php $permission_description = "permissions.$permission->description"; ?>{{ __($permission_description) }}</td>
 				              	<td>
 				              		@if ($permission->access_level_id == 1) 
 										{{ __('permissions.system') }}

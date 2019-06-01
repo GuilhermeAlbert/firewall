@@ -8,6 +8,8 @@ class Setting extends Model
 {
     protected $table = 'settings';
 
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'locale',
         'fallback_locale',
@@ -19,6 +21,8 @@ class Setting extends Model
         'mail_password',
         'mail_encryption',
         'debug',
-        'debugbar',
+        'debugbar'
     ];
+
+    protected $dates = ['created_at', 'deleted_at'];
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Language;
 use App\Preference;
+use App\ModificationLog;
 
 class PreferenceController extends Controller
 {
@@ -40,15 +41,7 @@ class PreferenceController extends Controller
         $preferences->save();
 
         // Saving modification logs
-        // $log = new ModificationLog();
-        // $log->ip_address = $_SERVER['REMOTE_ADDR'];
-        // $log->type = 'edit';
-        // $log->object = "";
-        // $log->before = 'edit';
-        // $log->after =  'edit';
-        // $log->description = 'edit preferences';
-        // $log->user_id = Auth::user()->id;
-        // $log->save();  
+        ModificationLog::saveLog($preferences->id, $request->user()->id, 10);      
 
         // Sending data to view
         return redirect()->route('preferences.edit');

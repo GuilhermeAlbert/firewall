@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Setting;
 use App\Language;
-use ModificationLog;
+use App\ModificationLog;
 use App;
 use Config;
 
@@ -49,15 +49,7 @@ class SettingController extends Controller
         $settings->save();
 
         // Salva log de modificação
-        // $log = new ModificationLog();
-        // $log->ip_address = $_SERVER['REMOTE_ADDR'];
-        // $log->type = 'edit';
-        // $log->object = "";
-        // $log->before = 'edit';
-        // $log->after =  'edit';
-        // $log->description = 'edit settings';
-        // $log->user_id = Auth::user()->id;
-        // $log->save();  
+        ModificationLog::saveLog($settings->id, $request->user()->id, 14); 
 
         return redirect()->route('settings.edit');
     }      

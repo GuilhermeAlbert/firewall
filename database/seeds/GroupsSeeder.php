@@ -21,8 +21,9 @@ class GroupsSeeder extends Seeder
                 'final_time' => '12:00',
                 'html_icon' => 'fas fa-home',   
                 'selected' => 'true',
+                'status_id' => 1,
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s"),	 
+                'updated_at' => date("Y-m-d H:i:s")	 
             ],  
             // Populing database with enterprise group
             [
@@ -31,9 +32,10 @@ class GroupsSeeder extends Seeder
                 'initial_time' => '00:00',
                 'final_time' => '12:00',
                 'html_icon' => 'fas fa-building',  
-                'status_id' => 2,          
+                'selected' => 'false',
+                'status_id' => 2,
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s"),	 
+                'updated_at' => date("Y-m-d H:i:s")	 
             ],
             [
                 'title' => 'Universidade',
@@ -41,9 +43,10 @@ class GroupsSeeder extends Seeder
                 'initial_time' => '00:00',
                 'final_time' => '12:00',
                 'html_icon' => 'fas fa-university', 
+                'selected' => 'false',
                 'status_id' => 2,           
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s"),	 
+                'updated_at' => date("Y-m-d H:i:s") 
             ]
         ];
         
