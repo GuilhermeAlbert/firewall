@@ -18,7 +18,7 @@ class AlterModificationLogsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->unsignedInteger('operation_id')->after('user_id');
-            $table->foreign('operation_id')->references('id')->on('operation');            
+            $table->foreign('operation_id')->references('id')->on('operations');            
 
             $table->unsignedInteger('status_id')->default(1)->after('operation_id');
             $table->foreign('status_id')->references('id')->on('status');  

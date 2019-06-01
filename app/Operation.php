@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Operation extends Model
 {
-    protected $table = 'operation';
+    protected $table = 'operations';
 
     protected $primaryKey = 'id';
 

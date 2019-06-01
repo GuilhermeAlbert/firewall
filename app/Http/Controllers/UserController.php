@@ -17,11 +17,7 @@ class UserController extends Controller
     public function list(Request $request)
     {
         // Getting users and the permission's description
-        $users = DB::table('users')
-            ->join('permissions', 'permissions.id', '=', 'users.permission_id')
-            ->select('permissions.description as permission', 'users.*')
-            ->where('users.status_id', '!=', '3')
-            ->get();        
+        $users = User::getActives();
 
         // Sending data to view
         return response()->view('layouts.app.users.list', [
@@ -32,7 +28,7 @@ class UserController extends Controller
     public function add(Request $request){
 
         // Getting permissions according the access level different of S (System)
-        $permissions = Permission::all()->where("access_level_id", "!=", "1");
+        $permissions = Permission::getByAccessLevelUser();
 
         // Sending data to view
         return view('layouts.app.users.add', [
@@ -46,7 +42,7 @@ class UserController extends Controller
         $user = User::find($id);
 
         // Getting permissions by access level
-        $permissions = Permission::all()->where("access_level_id", "!=", "1");
+        $permissions = Permission::getByAccessLevelUser();
 
         // Sending data to view
         return view('layouts.app.users.edit',

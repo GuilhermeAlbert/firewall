@@ -16,4 +16,9 @@ class Permission extends Model
     ];
 
     protected $dates = ['created_at', 'deleted_at'];
+
+    // Getting permissions according the access level different of S (System)
+	public static function getByAccessLevelUser() {
+        return Permission::all()->where("access_level_id", "!=", "1");
+    }      
 }

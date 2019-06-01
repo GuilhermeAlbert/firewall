@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function list(Request $request)
     {
-        $active_users = User::all()->count();
+        $active_users = User::getActiveCount();
 
         return response()->view('layouts.app.dashboard.list', [
             'active_users' => $active_users,

@@ -16,4 +16,8 @@ class Preference extends Model
     ];
 
     protected $dates = ['created_at', 'deleted_at'];
+
+    public static function getUserPreferences($user_id) {
+        return Preference::all()->where('user_id', '=', $user_id)->where('status_id', '=', '1')->first();
+    }
 }

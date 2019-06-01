@@ -24,15 +24,8 @@ class GroupController extends Controller
         // Getting the selected group
         $group = Group::find($id);
 
-        // Getting all groups to set selected false
-        $groups = Group::all();
-        
         // Setting all groups to unselected
-        foreach ($groups as $key => $grp) {
-            // Saving data updated on database 
-            $grp->selected = "false";
-            $grp->save();
-        }        
+        Group::setUnselected();
 
         // Selecting the selected group
         $group->selected = "true";

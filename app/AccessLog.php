@@ -18,4 +18,8 @@ class AccessLog extends Model
     ];
 
     protected $dates = ['created_at', 'deleted_at'];
+
+	public static function getPersonalLogs($user_id) {
+        return AccessLog::all()->where("user_id", "=", $user_id);
+    }      
 }

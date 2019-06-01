@@ -21,7 +21,7 @@ class PreferenceController extends Controller
         $languages = Language::all();
 
         // Getting the first authenticate user preference
-        $preferences = Preference::all()->where('user_id', '=', $request->user()->id)->where('status_id', '=', '1')->first();
+        $preferences = Preference::getUserPreferences($request->user()->id);
 
         // Rendering content to view
         return response()->view('layouts.app.preferences.edit', [
@@ -33,7 +33,7 @@ class PreferenceController extends Controller
     public function edit_preferences(Request $request)
     {
         // Getting the first preference of the authenticate user
-        $preferences = Preference::all()->where('user_id', '=', $request->user()->id)->first();
+        $preferences = Preference::getUserPreferences($request->user()->id);
 
         // Setting the updates on database
         $preferences->locale = $request['locale'];

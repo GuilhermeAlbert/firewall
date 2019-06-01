@@ -14,28 +14,28 @@ class PermissionsSeeder extends Seeder
     {
         $permissions = [
             [
-                'description' => 'Administrador do sistema',
+                'description' => 'administrator',
                 'access_level_id' => 1,
                 'status_id' => 1,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),
             ],
             [
-                'description' => 'Acesso à visualização',
+                'description' => 'read',
                 'access_level_id' => 2,
                 'status_id' => 1,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),	 
             ],
             [
-                'description' => 'Acesso à visualização e edição',
+                'description' => 'read_edit',
                 'access_level_id' => 2,
                 'status_id' => 1,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),            	 
             ],
             [
-                'description' => 'Acesso à visualização, edição e exclusão',
+                'description' => 'read_edit_delete',
                 'access_level_id' => 2,
                 'status_id' => 1,
                 'created_at' => date("Y-m-d H:i:s"),

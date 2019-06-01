@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class ModificationLog extends Model
 {
@@ -30,4 +31,13 @@ class ModificationLog extends Model
         $log->operation_id = $operation_id;
         $log->save(); 
     }    
+
+	public static function getPersonalLogs($user_id) {
+        return DB::table('modification_logs')
+        ->join('operations', 'operations.id', '=', 'modification_logs.operation_id')
+        ->select('operations.description as operation', 'modification_logs.*')
+        ->where('modification_logs.user_id', '=', $user_id)
+        ->where('modification_logs.status_id', '=', 1)
+        ->get();         
+    }      
 }

@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             LanguagesSeeder::class,
             IconsSeeder::class,
             GroupsSeeder::class,
-            OperationSeeder::class,
+            OperationsSeeder::class,
             ModificationLogsSeeder::class,
         ]);           	
     }

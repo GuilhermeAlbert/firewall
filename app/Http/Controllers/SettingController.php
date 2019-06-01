@@ -33,7 +33,10 @@ class SettingController extends Controller
 
     public function edit_settings(Request $request)
     {
+        // Getting settings
         $settings = Setting::first();
+
+        // Saving settings
         $settings->locale = $request['locale'];
         $settings->fallback_locale = $request['fallback_locale'];
         $settings->timezone = $request['timezone'];
@@ -51,6 +54,7 @@ class SettingController extends Controller
         // Salva log de modificação
         ModificationLog::saveLog($settings->id, $request->user()->id, 14); 
 
+        // Sending data to view
         return redirect()->route('settings.edit');
     }      
 }

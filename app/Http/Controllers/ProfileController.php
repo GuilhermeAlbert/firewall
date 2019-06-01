@@ -9,13 +9,16 @@ class ProfileController extends Controller
 {
     public function list(Request $request)
     {
+        // Sending data to view
         return response()->view('layouts.app.settings.list');
     }
 
     public function edit(Request $request)
     {
-    	$user = User::all()->where('id' ,'=', $request->user()->id)->first();
-    	
+        // Getting personal profile information
+    	$user = User::getProfile($request->user()->id);
+        
+        // Sending data to view
         return response()->view('layouts.app.profile.edit', ['user' => $user]);
     }    
 }
