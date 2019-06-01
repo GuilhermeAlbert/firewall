@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Group;
+use App\ModificationLog;
 
 class GroupController extends Controller
 {
@@ -36,6 +37,16 @@ class GroupController extends Controller
         // Selecting the selected group
         $group->selected = "true";
         $group->save();
+
+        // Creating modification logs
+        $log = new ModificationLog;
+
+        // Saving modification logs
+        $log->ip_address = $_SERVER['REMOTE_ADDR'];
+        $log->object = $group->id;
+        $log->user_id = $request->user()->id;
+        $log->operation_id = 2;
+        $log->save();         
         
         // Rendering data on view
         return redirect()->route('groups.list');        

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Preference;
 
 class PreferencesSeeder extends Seeder
 {
@@ -11,13 +12,15 @@ class PreferencesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('preferences')->insert([
+        $preference = [
             'locale' => 'pt-br',
             'receive_log_mails' => 'true',
             'user_id' => 1,
             'status_id' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),	 
-        ]); 
+        ];
+
+        Preference::insert($preference); 
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\ModificationLog;
 
 class ModificationLogsSeeder extends Seeder
 {
@@ -11,7 +12,7 @@ class ModificationLogsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('modification_logs')->insert([
+        $log = [
             'ip_address' => '127.0.0.1',
             'object' => '1',
             'user_id' => 1,
@@ -19,6 +20,8 @@ class ModificationLogsSeeder extends Seeder
             'operation_id' => 1, 
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-        ]); 
+        ]; 
+
+        ModificationLog::insert($log);
     }
 }

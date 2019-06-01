@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\AccessLevel;
 
 class AccessLevelsSeeder extends Seeder
 {
@@ -11,18 +12,21 @@ class AccessLevelsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('access_levels')->insert([
-            'description' => 'System',
-            'status_id' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),             
-        ]);
-
-        DB::table('access_levels')->insert([
-            'description' => 'User',
-            'status_id' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),             
-        ]);        
+        $access_levels = [
+            [
+                'description' => 'System',
+                'status_id' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),             
+            ],
+            [
+                'description' => 'User',
+                'status_id' => 1,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),             
+            ]
+        ];       
+        
+        AccessLevel::insert($access_levels);
     }
 }

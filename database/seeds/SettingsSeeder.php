@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Setting;
 
 class SettingsSeeder extends Seeder
 {
@@ -11,7 +12,7 @@ class SettingsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('settings')->insert([
+        $settings = [
             'app_name' => 'Firewall',
             'locale' => 'pt-br',
             'fallback_locale' => 'en',
@@ -20,6 +21,8 @@ class SettingsSeeder extends Seeder
             'timezone' => 'UTC',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),	 
-        ]); 
+        ];
+        
+        Setting::insert($settings);
     }
 }

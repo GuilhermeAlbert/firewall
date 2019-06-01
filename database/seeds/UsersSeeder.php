@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 
 class UsersSeeder extends Seeder
 {
@@ -11,7 +12,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        $users = [
             'name' => 'Administrador',
             'email' => 'adm@frw.com',
             'email_verified_at' => date("Y-m-d H:i:s"),
@@ -21,6 +22,8 @@ class UsersSeeder extends Seeder
             'permission_id' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),           
-        ]);
+        ];
+
+        User::insert($users);
     }
 }
