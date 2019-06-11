@@ -27,11 +27,11 @@
         <div id="collapseControle" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">{{ __('sidebar.control') }}</h6> 
-                <a class="collapse-item" href="#">{{ __('sidebar.report_access') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.report_deny') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.report_allow') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.report_devices') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.report_group') }}</a>
+                <a class="collapse-item" href="{{ route('reports.list_access') }}">{{ __('sidebar.report_access') }}</a>
+                <a class="collapse-item" href="{{ route('reports.list_deny') }}">{{ __('sidebar.report_deny') }}</a>
+                <a class="collapse-item" href="{{ route('reports.list_allow') }}">{{ __('sidebar.report_allow') }}</a>
+                <a class="collapse-item" href="{{ route('reports.list_devices') }}">{{ __('sidebar.report_devices') }}</a>
+                <a class="collapse-item" href="{{ route('reports.list_groups') }}">{{ __('sidebar.report_group') }}</a>
             </div>
         </div>
     </li> 
@@ -52,7 +52,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">{{ __('sidebar.control') }}</h6>
                 <a class="collapse-item" href="{{ route('groups.list') }}">{{ __('sidebar.groups') }}</a>
-                <!-- <a class="collapse-item" href="#">{{ __('sidebar.devices') }}</a> -->
+                <a class="collapse-item" href="{{ route('devices.list') }}">{{ __('sidebar.devices') }}</a>
             </div>
         </div>
     </li>  
@@ -65,9 +65,9 @@
         <div id="collapseBloqueio" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">{{ __('sidebar.websites_deny') }}</h6>
-                <a class="collapse-item" href="#">{{ __('sidebar.deny_by_mac') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.deny_by_ip') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.deny_by_keywords') }}</a>
+                <a class="collapse-item" href="{{ route('deny.list_by_mac') }}">{{ __('sidebar.deny_by_mac') }}</a>
+                <a class="collapse-item" href="{{ route('deny.list_by_ip') }}">{{ __('sidebar.deny_by_ip') }}</a>
+                <a class="collapse-item" href="{{ route('deny.list_by_keywords') }}">{{ __('sidebar.deny_by_keywords') }}</a>
             </div>
         </div>
     </li>  
@@ -80,9 +80,9 @@
         <div id="collapseLiberacao" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">{{ __('sidebar.websites_allow') }}</h6>
-                <a class="collapse-item" href="#">{{ __('sidebar.allow_by_mac') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.allow_by_ip') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.allow_by_keywords') }}</a>
+                <a class="collapse-item" href="{{ route('allow.list_by_mac') }}">{{ __('sidebar.allow_by_mac') }}</a>
+                <a class="collapse-item" href="{{ route('allow.list_by_ip') }}">{{ __('sidebar.allow_by_ip') }}</a>
+                <a class="collapse-item" href="{{ route('allow.list_by_keywords') }}">{{ __('sidebar.allow_by_keywords') }}</a>
             </div>
         </div>
     </li>   
@@ -95,8 +95,8 @@
         <div id="collapseMonitoramento" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">{{ __('sidebar.monitoring') }}</h6>                       
-                <a class="collapse-item" href="#">{{ __('sidebar.doors') }}</a>
-                <a class="collapse-item" href="#">{{ __('sidebar.http') }}/{{ __('sidebar.https') }}</a>
+                <a class="collapse-item" href="{{ route('monitoring.list_ports') }}">{{ __('sidebar.doors') }}</a>
+                <a class="collapse-item" href="{{ route('monitoring.list_http_https') }}">{{ __('sidebar.http') }}/{{ __('sidebar.https') }}</a>
             </div>
         </div>
     </li> 
