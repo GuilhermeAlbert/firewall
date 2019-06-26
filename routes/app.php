@@ -1,4 +1,5 @@
 <?php
+use App\Setting;
 
     Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->group(function () {
 
@@ -177,5 +178,16 @@
                 // GET ROUTES
                 Route::get('/list', 'DeviceController@list')->name('list');
             });
-        });  
+        });
+
+    Route::prefix('frw')->group(function () {
+        Route::name('frw.')
+            ->group(function () {
+                // GET ROUTES
+                Route::get('/exec', function (Request $request) {
+                 $out_put = shell_exec( 'echo "'.Setting::first()->os_user_pass.'" | sudo -S iptables -L');
+                 return response($out_put);
+                });
+            });
     });
+});

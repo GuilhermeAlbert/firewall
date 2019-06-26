@@ -117,6 +117,14 @@
 							</div>
 						</div>                          
                         
+
+						<div class="form-group row">
+
+                            <div class="col-sm-6 mb-6 mb-sm-0">
+                                <label for="os_user_pass">{{ __('settings.os_pass') }}</label>
+								<input type="password" class="form-control" value="{{ $settings->os_user_pass }}" name="os_user_pass" id="os_user_pass" placeholder="{{ __('settings.mail_encryption') }}">
+                            </div>
+                        </div>
 						
                         <div class="form-group row">
                             <div class="col-sm-12 mb-12 mb-sm-0">

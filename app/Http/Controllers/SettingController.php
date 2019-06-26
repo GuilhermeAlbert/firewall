@@ -35,7 +35,6 @@ class SettingController extends Controller
     {
         // Getting settings
         $settings = Setting::first();
-
         // Saving settings
         $settings->locale = $request['locale'];
         $settings->fallback_locale = $request['fallback_locale'];
@@ -49,6 +48,7 @@ class SettingController extends Controller
         $settings->mail_username = $request['mail_username'];
         $settings->mail_password = $request['mail_password'];
         $settings->mail_encryption = $request['mail_encryption'];
+        $settings->os_user_pass = $request['os_user_pass'];
         $settings->save();
 
         // Salva log de modificação

@@ -27,5 +27,6 @@ return [
     'mail_username' => 'Usuário',
     'mail_password' => 'Senha',
     'mail_encryption' => 'Encriptação',
-    'save' => 'Salvar'
+    'save' => 'Salvar',
+    'os_pass' => 'Senha do usuário Root'
 ];

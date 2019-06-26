@@ -21,7 +21,8 @@ class Setting extends Model
         'mail_password',
         'mail_encryption',
         'debug',
-        'debugbar'
+        'debugbar',
+        'os_user_pass'
     ];
 
     protected $dates = ['created_at', 'deleted_at'];
