@@ -29,4 +29,10 @@ class DenyController extends Controller
         // Sending data to view
         return response()->view('app.deny.keywords.list');
     }  
+
+    public function list_by_domains(Request $request)
+    {
+        // Sending data to view
+        return response()->view('app.deny.domains.list');
+    }      
 }

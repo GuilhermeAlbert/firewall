@@ -22,11 +22,13 @@ return [
     'deny_by_mac' => 'Endereço MAC',
     'deny_by_ip' => 'Endereço IP',
     'deny_by_keywords' => 'Palavras-chave',
+    'deny_by_domains' => 'Domínios',
     
     'websites_allow' => 'Liberação de sites',
     'allow_by_mac' => 'Endereço MAC',
     'allow_by_ip' => 'Endereço IP',
     'allow_by_keywords' => 'Palavras-chave',
+    'allow_by_domains' => 'Domínios',
     
     'monitoring' => 'Monitoramento',
     'doors' => 'Portas',

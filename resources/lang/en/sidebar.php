@@ -22,11 +22,13 @@ return [
     'deny_by_mac' => 'MAC address',
     'deny_by_ip' => 'IP address',
     'deny_by_keywords' => 'Keywords',
+    'deny_by_domains' => 'Domains',
     
     'websites_allow' => 'Websites allow',
     'allow_by_mac' => 'MAC address',
     'allow_by_ip' => 'IP address',
     'allow_by_keywords' => 'Keywords',
+    'allow_by_domains' => 'Domains',
     
     'monitoring' => 'Monitoring',
     'doors' => 'Ports',

@@ -28,5 +28,11 @@ class AllowController extends Controller
     {
         // Sending data to view
         return response()->view('app.allow.keywords.list');
-    }            
+    }    
+    
+    public function list_by_domains(Request $request)
+    {
+        // Sending data to view
+        return response()->view('app.allow.domains.list');
+    }     
 }

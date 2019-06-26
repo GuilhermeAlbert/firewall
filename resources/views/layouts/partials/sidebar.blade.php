@@ -68,6 +68,7 @@
                 <a class="collapse-item" href="{{ route('deny.list_by_mac') }}">{{ __('sidebar.deny_by_mac') }}</a>
                 <a class="collapse-item" href="{{ route('deny.list_by_ip') }}">{{ __('sidebar.deny_by_ip') }}</a>
                 <a class="collapse-item" href="{{ route('deny.list_by_keywords') }}">{{ __('sidebar.deny_by_keywords') }}</a>
+                <a class="collapse-item" href="{{ route('deny.list_by_domains') }}">{{ __('sidebar.deny_by_domains') }}</a>
             </div>
         </div>
     </li>  
@@ -83,6 +84,7 @@
                 <a class="collapse-item" href="{{ route('allow.list_by_mac') }}">{{ __('sidebar.allow_by_mac') }}</a>
                 <a class="collapse-item" href="{{ route('allow.list_by_ip') }}">{{ __('sidebar.allow_by_ip') }}</a>
                 <a class="collapse-item" href="{{ route('allow.list_by_keywords') }}">{{ __('sidebar.allow_by_keywords') }}</a>
+                <a class="collapse-item" href="{{ route('allow.list_by_domains') }}">{{ __('sidebar.allow_by_domains') }}</a>
             </div>
         </div>
     </li>   

@@ -71,16 +71,6 @@ Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->
         });
     });
 
-    // FIREWALL ROUTES
-    Route::prefix('firewall')->group(function () {
-        Route::name('firewall.')
-        ->group(function () {
-
-            // GET ROUTES
-            Route::get('/list', 'FirewallController@list')->name('list');
-        });
-    });
-
     // ALLOW ROUTES
     Route::prefix('allow')->group(function () {
         Route::name('allow.')
@@ -93,6 +83,7 @@ Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->
             Route::get('/list_by_mac', 'AllowController@list_by_mac')->name('list_by_mac');
             Route::get('/list_by_ip', 'AllowController@list_by_ip')->name('list_by_ip');
             Route::get('/list_by_keywords', 'AllowController@list_by_keywords')->name('list_by_keywords');
+            Route::get('/list_by_domains', 'AllowController@list_by_domains')->name('list_by_domains');
         });
     });   
 
@@ -108,6 +99,7 @@ Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->
             Route::get('/list_by_mac', 'DenyController@list_by_mac')->name('list_by_mac');
             Route::get('/list_by_ip', 'DenyController@list_by_ip')->name('list_by_ip');
             Route::get('/list_by_keywords', 'DenyController@list_by_keywords')->name('list_by_keywords');                
+            Route::get('/list_by_domains', 'DenyController@list_by_domains')->name('list_by_domains');
         });
     });
 
