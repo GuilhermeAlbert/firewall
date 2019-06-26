@@ -14,7 +14,7 @@ class GroupController extends Controller
         $groups = Group::all()->where('status_id', '=', '1');
 
         // Sending data to view
-        return response()->view('layouts.app.groups.list', [
+        return response()->view('app.groups.list', [
             'groups' => $groups,
         ]);
     }

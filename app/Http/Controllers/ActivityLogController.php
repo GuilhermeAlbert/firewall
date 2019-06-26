@@ -14,7 +14,7 @@ class ActivityLogController extends Controller
 
         $modification_logs = ModificationLog::getPersonalLogs(Auth()->user()->id);
 
-        return response()->view('layouts.app.activity_logs.list', [
+        return response()->view('app.activity_logs.list', [
             'access_logs' => $access_logs,
             'modification_logs' => $modification_logs
         ]);

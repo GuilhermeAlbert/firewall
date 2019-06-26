@@ -8,6 +8,6 @@ class FirewallController extends Controller
 {
     public function list(Request $request)
     {
-        return response()->view('layouts.app.firewall.list');
+        return response()->view('app.firewall.list');
     }
 }

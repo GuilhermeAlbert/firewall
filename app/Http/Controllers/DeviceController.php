@@ -9,6 +9,6 @@ class DeviceController extends Controller
     public function list(Request $request)
     {
         // Sending data to view
-        return response()->view('layouts.app.devices.list');
+        return response()->view('app.devices.list');
     }
 }

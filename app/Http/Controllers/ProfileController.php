@@ -10,7 +10,7 @@ class ProfileController extends Controller
     public function list(Request $request)
     {
         // Sending data to view
-        return response()->view('layouts.app.settings.list');
+        return response()->view('app.settings.list');
     }
 
     public function edit(Request $request)
@@ -19,6 +19,6 @@ class ProfileController extends Controller
     	$user = User::getProfile($request->user()->id);
         
         // Sending data to view
-        return response()->view('layouts.app.profile.edit', ['user' => $user]);
+        return response()->view('app.profile.edit', ['user' => $user]);
     }    
 }

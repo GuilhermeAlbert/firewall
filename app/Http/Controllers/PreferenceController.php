@@ -12,7 +12,7 @@ class PreferenceController extends Controller
     public function list(Request $request)
     {
         // Sending data to view
-        return response()->view('layouts.app.preferences.list');
+        return response()->view('app.preferences.list');
     }
 
     public function edit(Request $request)
@@ -24,7 +24,7 @@ class PreferenceController extends Controller
         $preferences = Preference::getUserPreferences($request->user()->id);
 
         // Rendering content to view
-        return response()->view('layouts.app.preferences.edit', [
+        return response()->view('app.preferences.edit', [
             'languages' => $languages,
             'preferences' => $preferences
         ]);

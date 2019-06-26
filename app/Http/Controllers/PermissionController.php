@@ -11,7 +11,7 @@ class PermissionController extends Controller
     {
         $permissions = Permission::all()->where('status', '!=', '1');
 
-        return response()->view('layouts.app.permissions.list', [
+        return response()->view('app.permissions.list', [
             'permissions' => $permissions,
         ]);
     }

@@ -13,7 +13,7 @@ class SettingController extends Controller
 {
     public function list(Request $request)
     {
-        return response()->view('layouts.app.settings.list');
+        return response()->view('app.settings.list');
     }
 
     public function edit(Request $request)
@@ -25,7 +25,7 @@ class SettingController extends Controller
         $languages = Language::all();
 
         // Rendering content on view
-        return response()->view('layouts.app.settings.edit', [
+        return response()->view('app.settings.edit', [
             'languages' => $languages, 
             'settings' => $settings
         ]);

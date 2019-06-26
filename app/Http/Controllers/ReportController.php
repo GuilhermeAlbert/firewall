@@ -12,7 +12,7 @@ class ReportController extends Controller
     public function list(Request $request)
     {
         // Sending data to view
-        return response()->view('layouts.app.reports.list');
+        return response()->view('app.reports.list');
     }
 
     public function list_access(Request $request)
@@ -21,7 +21,7 @@ class ReportController extends Controller
         // $access = AccessLog::getAccess();
 
         // Sending data to view
-        return response()->view('layouts.app.reports.access.list');
+        return response()->view('app.reports.access.list');
     }
 
     public function list_allow(Request $request)
@@ -30,7 +30,7 @@ class ReportController extends Controller
         $allows = IpAddress::getByAllow();
 
         // Sending data to view
-        return response()->view('layouts.app.reports.allow.list', [
+        return response()->view('app.reports.allow.list', [
             'allows' => $allows
         ]);
     }
@@ -41,7 +41,7 @@ class ReportController extends Controller
         $denies = IpAddress::getByDeny();
 
         // Sending data to view
-        return response()->view('layouts.app.reports.deny.list', [
+        return response()->view('app.reports.deny.list', [
             'denies' => $denies
         ]);
     }
@@ -49,12 +49,12 @@ class ReportController extends Controller
     public function list_devices(Request $request)
     {
         // Sending data to view
-        return response()->view('layouts.app.reports.devices.list');
+        return response()->view('app.reports.devices.list');
     }
 
     public function list_groups(Request $request)
     {
         // Sending data to view
-        return response()->view('layouts.app.reports.groups.list');
+        return response()->view('app.reports.groups.list');
     }                  
 }

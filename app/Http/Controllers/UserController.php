@@ -20,7 +20,7 @@ class UserController extends Controller
         $users = User::getActives();
 
         // Sending data to view
-        return response()->view('layouts.app.users.list', [
+        return response()->view('app.users.list', [
             'users' => $users,
         ]);
     }
@@ -31,7 +31,7 @@ class UserController extends Controller
         $permissions = Permission::getByAccessLevelUser();
 
         // Sending data to view
-        return view('layouts.app.users.add', [
+        return view('app.users.add', [
             'permissions' => $permissions,
         ]);        
     }    
@@ -45,7 +45,7 @@ class UserController extends Controller
         $permissions = Permission::getByAccessLevelUser();
 
         // Sending data to view
-        return view('layouts.app.users.edit',
+        return view('app.users.edit',
             [
                 'id' => $id,
                 'permissions' => $permissions,

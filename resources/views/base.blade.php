@@ -1,4 +1,4 @@
-@include('partials.head')
+@include('layouts.partials.head')
 
 <body id="page-top">
 
@@ -6,7 +6,7 @@
     <div id="wrapper">
         @guest
         @else
-            @include('partials.sidebar')
+            @include('layouts.partials.sidebar')
         @endguest
 
         <!-- Content Wrapper -->
@@ -15,14 +15,14 @@
             <div id="content">
                 @guest
                 @else
-                    @include('partials.nav')
+                    @include('layouts.partials.nav')
                 @endguest
 
                 @section('content')
                 @show
             </div>
             <!-- End of Main Content -->        
-            @include('partials.footer')
+            @include('layouts.partials.footer')
         </div>
         <!-- End of Content Wrapper -->
     </div>
