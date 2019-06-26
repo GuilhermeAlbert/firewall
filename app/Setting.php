@@ -22,8 +22,18 @@ class Setting extends Model
         'mail_encryption',
         'debug',
         'debugbar',
-        'os_user_pass'
+        'user_root_password'
     ];
 
     protected $dates = ['created_at', 'deleted_at'];
+
+    /**
+     *  Getting Operational System root password 
+     *  
+     *  @return void
+     */
+    public static function getRootPassword() {
+        // Sending data to return
+        return Setting::first()->user_root_password;
+    } 
 }

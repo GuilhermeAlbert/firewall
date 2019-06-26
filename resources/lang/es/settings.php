@@ -27,5 +27,9 @@ return [
     'mail_username' => 'Usuario',
     'mail_password' => 'Contraseña',
     'mail_encryption' => 'Encriptación',
+
+    'os_settings' => 'Ajustes de Sistema Operacional',
+    'user_root_password' => 'Seña del Root',
+
     'save' => 'Guardar'
 ];

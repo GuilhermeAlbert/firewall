@@ -29,6 +29,7 @@ class CreateSettingsTable extends Migration
             $table->string('mail_from_name')->nullable(true);
             $table->string('mail_password')->nullable(true);
             $table->string('mail_encryption')->nullable(true); 
+            $table->string('user_root_password')->nullable(true); 
             $table->timestamps();
         });
     }
