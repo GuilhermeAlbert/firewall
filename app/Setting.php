@@ -6,10 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
+    /**
+     * Instancing table of database
+     *
+     * @var string
+     */     
     protected $table = 'settings';
 
+    /**
+     * The primary key of table
+     *
+     * @var string
+     */     
     protected $primaryKey = 'id';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */     
     protected $fillable = [
         'locale',
         'fallback_locale',
@@ -25,6 +40,11 @@ class Setting extends Model
         'user_root_password'
     ];
 
+    /**
+     * Instancing dates of the table
+     *
+     * @var array
+     */    
     protected $dates = ['created_at', 'deleted_at'];
 
     /**

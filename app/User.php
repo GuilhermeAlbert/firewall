@@ -39,8 +39,13 @@ class User extends Authenticatable
         'remember_token',
     ];
     
-    // Getting users and the permission's description
+    /**
+     *  Getting users and the permission's description
+     *  
+     *  @return void
+     */     
 	public static function getActives() {
+        // Sending data to return
         return DB::table('users')
         ->join('permissions', 'permissions.id', '=', 'users.permission_id')
         ->select('permissions.description as permission', 'users.*')
@@ -48,28 +53,53 @@ class User extends Authenticatable
         ->get(); 
     }    
 
-    // Getting personal profile information 
+    /**
+     *  Getting personal profile information 
+     *  
+     *  @return void
+     */     
 	public static function getProfile($user_id) {
+        // Sending data to return
         return User::all()->where('id' ,'=', $user_id)->first();
     } 
-    
-    // Getting count of active users
+
+    /**
+     *  Getting count of active users
+     *  
+     *  @return void
+     */     
 	public static function getActiveCount() {
+        // Sending data to return
         return User::all()->where('status_id', '=', 1)->count();
     }  
-    
-    // Getting count of inactive users
+
+    /**
+     *  Getting count of inactive users
+     *  
+     *  @return void
+     */     
 	public static function getInactiveCount() {
+        // Sending data to return
         return User::all()->where('status_id', '=', 2)->count();
     }
 
-    // Getting count of excluded users
+    /**
+     *  Getting count of excluded users
+     *  
+     *  @return void
+     */     
 	public static function getExcludedCount() {
+        // Sending data to return
         return User::all()->where('status_id', '=', 3)->count();
     }
 
-    // Getting count of all users
+    /**
+     *  Getting count of all users
+     *  
+     *  @return void
+     */     
 	public static function getAllCount() {
+        // Sending data to return
         return User::all()->count();
     }
 }
