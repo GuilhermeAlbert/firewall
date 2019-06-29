@@ -15,4 +15,14 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+
+});
+// FIREWALL ROUTES
+Route::prefix('firewall')->group(function () {
+    Route::name('firewall.')
+        ->group(function () {
+
+            // GET ROUTES
+            Route::get('/get_ports', 'FirewallController@get_ports')->name('get_ports');
+        });
 });

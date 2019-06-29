@@ -12,13 +12,13 @@ class FirewallController extends Controller
      *  
      *  @return void
      */
-    public function execute_shell_command($command)
+    public static function execute_shell_command($command)
     {
         // Getting the root password
         $user_root_password = Setting::getRootPassword();
 
         // Sending data to return
-        return shell_exec( 'echo "'. $user_root_password . '" | '. $command);
+        return shell_exec( 'echo "'. $user_root_password . '" | sudo -S '. $command);
     }
 
     /**
@@ -29,9 +29,9 @@ class FirewallController extends Controller
     public function get_ports(Request $request)
     {
     	// Writing a port list command
-		$command = "sudo -S iptables -L";
+		$command = "iptables -L";
 
 		// Returning data to json
-		return response(execute_shell_command($command));
+		return response(self::execute_shell_command($command));
     }    
 }

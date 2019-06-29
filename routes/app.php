@@ -100,6 +100,8 @@ Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->
             Route::get('/list_by_ip', 'DenyController@list_by_ip')->name('list_by_ip');
             Route::get('/list_by_keywords', 'DenyController@list_by_keywords')->name('list_by_keywords');                
             Route::get('/list_by_domains', 'DenyController@list_by_domains')->name('list_by_domains');
+            Route::get('/add_domains', 'DenyController@add_domains')->name('add_domains');
+            Route::post('/add_domains', 'DenyController@add_domains_post')->name('add_domains_post');
         });
     });
 
@@ -171,13 +173,4 @@ Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->
         });
     });
 
-    // FIREWALL ROUTES
-    Route::prefix('firewall')->group(function () {
-        Route::name('firewall.')
-        ->group(function () {
-
-            // GET ROUTES
-            Route::get('/get_ports', 'FirewallController@get_ports')->name('get_ports');
-        });
-    });
 });

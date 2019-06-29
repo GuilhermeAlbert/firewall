@@ -3,8 +3,10 @@
 @section('content')
 <div class="container-fluid">
 
-  	<h1 class="h3 mb-2 text-gray-800">Some title</h1>
-  	<p class="mb-4">Some description</p>
+	<div class="d-sm-flex align-items-center justify-content-between mb-4">
+	        <h1 class="h3 mb-0 text-gray-800">{{ __('domains.title') }}</h1>
+	        <a href="{{ route('deny.add_domains') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i></a>
+	</div>  
 
   	<div class="card shadow mb-4">
 		<div class="card-body">
@@ -13,18 +15,19 @@
 		          	<thead>
 		            	<tr>
 		              		<th>#</th>
-		              		<th>Some data</th>
-							<th>Some data</th>
-		              		<th>Some data</th>
+							<th>Domínio</th>
+		              		<th>Ações</th>
 		            	</tr>
 		          	</thead>
 	          		<tbody>
+					  @foreach ($domains as $domain)
                         <tr>
-                            <td>Some data</td>
-                            <td>Some data</td>
-                            <td>Some data</td>
-                            <td>Some data</td>
+                            <td>{{ $domain->id }}</td>
+							<td>{{ $domain->description }}</td>
+							<td>{{ $domain->id }}</td>
                         </tr>
+					  @endforeach
+					  
 			        </tbody>
 	        	</table>
 	      	</div>
