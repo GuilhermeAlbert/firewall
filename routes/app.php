@@ -79,11 +79,23 @@ Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->
             // GET ROUTES
             Route::get('/list', 'AllowController@list')->name('list');
 
-            // ALLOW GET ROUTES
-            Route::get('/list_by_mac', 'AllowController@list_by_mac')->name('list_by_mac');
-            Route::get('/list_by_ip', 'AllowController@list_by_ip')->name('list_by_ip');
-            Route::get('/list_by_keywords', 'AllowController@list_by_keywords')->name('list_by_keywords');
-            Route::get('/list_by_domains', 'AllowController@list_by_domains')->name('list_by_domains');
+            // DOMAINS ROUTES
+            Route::prefix('domains')->group(function () {
+                Route::name('domains.')
+                ->group(function () {
+
+                    // GET ROUTES
+                    Route::get('/list', 'AllowDomainController@list')->name('list');
+                    Route::get('/add', 'AllowDomainController@add')->name('add');
+                    Route::get('/edit', 'AllowDomainController@edit')->name('edit');
+
+                    // POST ROUTES
+                    Route::post('/add_domain', 'AllowDomainController@add_domain')->name('add_domain');
+                    Route::post('/edit_domain', 'AllowDomainController@edit_domain')->name('edit_domain');
+                    Route::post('/delete_domain', 'AllowDomainController@delete_domain')->name('delete_domain');
+                });
+            });    
+
         });
     });   
 
@@ -94,14 +106,24 @@ Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->
 
             // GET ROUTES
             Route::get('/list', 'DenyController@list')->name('list');
+            
+            // DOMAINS ROUTES
+            Route::prefix('domains')->group(function () {
+                Route::name('domains.')
+                ->group(function () {
 
-            // DENY GET ROUTES
-            Route::get('/list_by_mac', 'DenyController@list_by_mac')->name('list_by_mac');
-            Route::get('/list_by_ip', 'DenyController@list_by_ip')->name('list_by_ip');
-            Route::get('/list_by_keywords', 'DenyController@list_by_keywords')->name('list_by_keywords');                
-            Route::get('/list_by_domains', 'DenyController@list_by_domains')->name('list_by_domains');
-            Route::get('/add_domains', 'DenyController@add_domains')->name('add_domains');
-            Route::post('/add_domains', 'DenyController@add_domains_post')->name('add_domains_post');
+                    // GET ROUTES
+                    Route::get('/list', 'DenyDomainController@list')->name('list');
+                    Route::get('/add', 'DenyDomainController@add')->name('add');
+                    Route::get('/edit', 'DenyDomainController@edit')->name('edit');
+
+                    // POST ROUTES
+                    Route::post('/add_domain', 'DenyDomainController@add_domain')->name('add_domain');
+                    Route::post('/edit_domain', 'DenyDomainController@edit_domain')->name('edit_domain');
+                    Route::post('/delete_domain', 'DenyDomainController@delete_domain')->name('delete_domain');
+                });
+            });            
+
         });
     });
 

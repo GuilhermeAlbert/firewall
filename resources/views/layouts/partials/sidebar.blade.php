@@ -65,10 +65,10 @@
         <div id="collapseBloqueio" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">{{ __('sidebar.websites_deny') }}</h6>
-                <a class="collapse-item" href="{{ route('deny.list_by_mac') }}">{{ __('sidebar.deny_by_mac') }}</a>
-                <a class="collapse-item" href="{{ route('deny.list_by_ip') }}">{{ __('sidebar.deny_by_ip') }}</a>
-                <a class="collapse-item" href="{{ route('deny.list_by_keywords') }}">{{ __('sidebar.deny_by_keywords') }}</a>
-                <a class="collapse-item" href="{{ route('deny.list_by_domains') }}">{{ __('sidebar.deny_by_domains') }}</a>
+                <a class="collapse-item" href="#">{{ __('sidebar.deny_by_mac') }}</a>
+                <a class="collapse-item" href="#">{{ __('sidebar.deny_by_ip') }}</a>
+                <a class="collapse-item" href="#">{{ __('sidebar.deny_by_keywords') }}</a>
+                <a class="collapse-item" href="{{ route('deny.domains.list') }}">{{ __('sidebar.deny_by_domains') }}</a>
             </div>
         </div>
     </li>  
@@ -81,10 +81,10 @@
         <div id="collapseLiberacao" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">{{ __('sidebar.websites_allow') }}</h6>
-                <a class="collapse-item" href="{{ route('allow.list_by_mac') }}">{{ __('sidebar.allow_by_mac') }}</a>
-                <a class="collapse-item" href="{{ route('allow.list_by_ip') }}">{{ __('sidebar.allow_by_ip') }}</a>
-                <a class="collapse-item" href="{{ route('allow.list_by_keywords') }}">{{ __('sidebar.allow_by_keywords') }}</a>
-                <a class="collapse-item" href="{{ route('allow.list_by_domains') }}">{{ __('sidebar.allow_by_domains') }}</a>
+                <a class="collapse-item" href="#">{{ __('sidebar.allow_by_mac') }}</a>
+                <a class="collapse-item" href="#">{{ __('sidebar.allow_by_ip') }}</a>
+                <a class="collapse-item" href="#">{{ __('sidebar.allow_by_keywords') }}</a>
+                <a class="collapse-item" href="{{ route('allow.domains.list') }}">{{ __('sidebar.allow_by_domains') }}</a>
             </div>
         </div>
     </li>   

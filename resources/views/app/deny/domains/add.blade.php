@@ -4,9 +4,10 @@
 <div class="container-fluid">
 
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">{{ __('domains.title') }}</h1>
-	</div>
-	<p class="mb-4">{{ __('users.check_the') }} <a href="{{ route('permissions.list') }}">{{ __('users.permissions_list') }}</a>.</p>
+		<h1 class="h3 mb-0 text-gray-800">{{ __('domains.domains') }}</h1>
+	</div>  
+
+	<p class="mb-4">{{ __('domains.description') }}</p>
 
     <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
@@ -14,15 +15,13 @@
 
           	<div class="col-lg-12">
             	<div class="p-5">
-				<form class="user" method="post" name="form_user_add" action="">
+				<form class="user" method="post" name="form_domain_add" action="{{ route('deny.domains.add_domain') }}">
 						@csrf
-
-						<input type="hidden" name="id" value="">
-
+						
 						<div class="form-group row">
 							<div class="col-sm-12 mb-12 mb-sm-0">
 								<label for="name"></label>
-								<input type="text" class="form-control" value="" name="domain" id="domain" placeholder="{{ __('users.name') }}" autocomplete="off">
+								<input type="text" class="form-control" value="" name="domain" id="domain" placeholder="{{ __('domains.domain') }}" autocomplete="off">
 							</div>
 						</div>
 						
@@ -32,8 +31,7 @@
 									{{ __('users.save') }}
 								</button>						
 							</div>
-						</div>
-						
+						</div>						
 					</form>
         		</div>
       		</div>

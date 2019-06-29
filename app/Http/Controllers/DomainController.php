@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AllowController extends Controller
+class DomainController extends Controller
 {
     public function list(Request $request)
     {
         // Sending data to view
-        return response()->view('app.allow.list');
-    }    
+        return response()->view('app.domains.list');
+    }      
 }

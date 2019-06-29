@@ -60,12 +60,29 @@ class Domain extends Model
         return Domain::all()->where("action", "=", "deny");
     }
 
-    public static function saveAll($domain){
-        //$domians = self::getByDeny();
-        //foreach ( $domians as $key => $domain) {
-            $command = 'bash -c "echo "'.$domain.'" >> /etc/squid/regras/sites_bloqueados"';
-            FirewallController::execute_shell_command($command);
-        
+    /**
+     *  Save a typed domain on shell allow archive
+     *  
+     *  @return void
+     */      
+    public static function saveAllowArchive($domain){
+        // The shell command
+        $command = 'bash -c "echo "'.$domain.'" >> /etc/squid/regras/sites_liberados"';
+
+        // Execute a shell command
+        FirewallController::execute_shell_command($command);
     }
     
+    /**
+     *  Save a typed domain on shell deny archive
+     *  
+     *  @return void
+     */      
+    public static function saveDenyArchive($domain){
+        // The shell command
+        $command = 'bash -c "echo "'.$domain.'" >> /etc/squid/regras/sites_bloqueados"';
+
+        // Execute a shell command
+        FirewallController::execute_shell_command($command);
+    }    
 }
