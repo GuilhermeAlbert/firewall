@@ -68,10 +68,16 @@ class DenyDomainController extends Controller
      * 
      * @return void
      */    
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
     {
+        // Getting domain by id
+        $domain = Domain::find($id);
+
         // Sending data to view
-        return response()->view('app.deny.domains.edit');
+        return response()->view('app.deny.domains.edit', [ 
+            'id' => $id,
+            'domain' => $domain 
+        ]);
     }      
 
     /** 

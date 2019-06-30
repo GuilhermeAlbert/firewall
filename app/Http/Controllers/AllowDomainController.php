@@ -60,10 +60,16 @@ class AllowDomainController extends Controller
      * 
      * @return void
      */    
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
     {
+        // Getting domain by id
+        $domain = Domain::find($id);
+
         // Sending data to view
-        return response()->view('app.allow.domains.edit');
+        return response()->view('app.allow.domains.edit', [ 
+            'id' => $id,
+            'domain' => $domain 
+        ]);
     }      
 
     /** 

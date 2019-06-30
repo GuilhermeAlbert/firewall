@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Setting;
 
 class Preference extends Model
 {
@@ -43,6 +44,28 @@ class Preference extends Model
      *  @return void
      */      
     public static function getUserPreferences($user_id) {
+        // Returning data to query
         return Preference::all()->where('user_id', '=', $user_id)->where('status_id', '=', '1')->first();
     }
+
+    /**
+     *  Create user default preferences
+     *  
+     *  @return void
+     */      
+    public static function setDefaultUserPreferences($user_id) {
+        // Getting the settings values
+        $settings = Setting::first();
+
+        // Initializing the preferences
+        $preferences = new Preference();
+
+        // Attribute values to variables
+        $preferences->locale = $settings->locale;
+        $preferences->receive_log_mails = 'true';
+        $preferences->user_id = $user_id;
+
+        // Saving on database
+        $preferences->save();        
+    }    
 }

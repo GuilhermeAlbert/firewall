@@ -40,17 +40,16 @@
 								</td>
 							@elseif (Auth::user()->permission_id == 1 || Auth::user()->permission_id == 4)
 								<td>
-										<a href="{{ route('deny.domains.edit', ['id' => $domain->id]) }}">
-											<button class="btn btn-success">
-												<i class="fas fa-pen"></i>
-											</button>
-										</a>
-										<a href="{{ route('deny.domains.delete_domain', ['id' => $domain->id] ) }}">
-											<button class="btn btn-danger" type="submit" title="{{ __('domains.delete') }}">
-												<i class="fas fa-trash-alt"></i>
-											</button>
-										</a>
-									
+									<a href="{{ route('deny.domains.edit', ['id' => $domain->id]) }}">
+										<button class="btn btn-success">
+											<i class="fas fa-pen"></i>
+										</button>
+									</a>
+									<a href="{{ route('deny.domains.delete_domain', ['id' => $domain->id] ) }}">
+										<button class="btn btn-danger" type="submit" title="{{ __('domains.delete') }}">
+											<i class="fas fa-trash-alt"></i>
+										</button>
+									</a>									
 								</td>					                					            
 							@endif
                         </tr>

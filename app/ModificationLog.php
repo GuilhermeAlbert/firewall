@@ -66,6 +66,8 @@ class ModificationLog extends Model
      *  @return void
      */     
 	public static function getPersonalLogs($user_id) {
+        
+        // Returning personal modification logs query
         return DB::table('modification_logs')
         ->join('operations', 'operations.id', '=', 'modification_logs.operation_id')
         ->select('operations.description as operation', 'modification_logs.*')

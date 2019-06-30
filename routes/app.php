@@ -87,7 +87,8 @@ Route::prefix('admin')->middleware(['auth'])->middleware(['checkAppSettings'])->
                     // GET ROUTES
                     Route::get('/list', 'AllowDomainController@list')->name('list');
                     Route::get('/add', 'AllowDomainController@add')->name('add');
-                    Route::get('/edit', 'AllowDomainController@edit')->name('edit');
+                    Route::get('/edit/{id}', 'AllowDomainController@edit')->name('edit');
+                    Route::get('/delete_domain/{id}','AllowDomainController@delete_domain')->name('delete_domain');
 
                     // POST ROUTES
                     Route::post('/add_domain', 'AllowDomainController@add_domain')->name('add_domain');

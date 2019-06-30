@@ -65,24 +65,12 @@ class UserController extends Controller
         $user->save();
 
         // Saving user default preferences
-        $settings = Setting::first();
-        $preferences = new Preference();
-        $preferences->locale = $settings->locale;
-        $preferences->receive_log_mails = 'true';
-        $preferences->user_id = $user->id;
-        $preferences->save();
+        Preference::setDefaultUserPreferences($user->id);
 
         // Save modification logs
-        $log = new ModificationLog();
-        $log->ip_address = $_SERVER['REMOTE_ADDR'];
-        $log->type = 'add';
-        $log->object = $user->id;
-        $log->before = 'add';
-        $log->after =  'add';
-        $log->description = 'new user';
-        $log->user_id = Auth::user()->id;
-        $log->save();
+        ModificationLog::saveLog($user->id, $request->user()->id, 1);
 
+        // Redirect to users list
 		return redirect()->route('users.list');
     }    
 
@@ -126,7 +114,6 @@ class UserController extends Controller
                 return redirect()->route('users.list');
             
             } catch (Exception $e) {
-                
                 // Sending data to view
                 return redirect()->route('users.list');
             }
